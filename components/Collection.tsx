@@ -239,7 +239,10 @@ function Player({
       />
 
       <div className="relative z-10 flex max-h-full w-full max-w-5xl flex-col gap-6 md:flex-row md:items-center">
-        <div className="relative mx-auto aspect-[9/16] max-h-[72svh] w-auto min-w-0 shrink-0 overflow-hidden rounded-sm bg-ink-soft md:mx-0">
+        {/* A definite height is required: with only a max-height, the
+            aspect ratio has nothing to resolve against and the panel
+            collapses to zero width inside the flex row. */}
+        <div className="relative mx-auto h-[52svh] w-auto max-w-full shrink-0 overflow-hidden rounded-sm bg-ink-soft [aspect-ratio:9/16] md:mx-0 md:h-[72svh]">
           {property.video ? (
             <video
               key={property.code}

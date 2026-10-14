@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "title": "Jana — Colección Privada",
+    "description": "Seis residencias en la Costa del Sol, mostradas en vídeo. Visitas privadas con cita previa."
+  },
+  "nav": {
+    "collection": "Colección",
+    "about": "Sobre mí",
+    "process": "Proceso",
+    "faq": "Preguntas",
+    "cta": "Reservar visita"
+  },
+  "ticker": [
+    "14,2 M€ intermediados en 2026",
+    "38 residencias vendidas",
+    "4,9 ★ sobre 127 reseñas",
+    "Visitas privadas en 48 h"
+  ],
+  "hero": {
+    "eyebrow": "Colección Privada 00.00",
+    "title": "Seis residencias.\nMostradas en vídeo.",
+    "tagline": "Representación inmobiliaria de nueva generación en la Costa del Sol — filmada, no fotografiada.",
+    "cta": "Reservar visita privada",
+    "secondary": "Ver la colección",
+    "scroll": "Desliza"
+  },
+  "positioning": {
+    "heading": "Expresiones de lugar.",
+    "body": "Una selección de seis — no un portal de anuncios. Cada residencia se filma completa, con precio transparente, y se muestra solo con cita previa."
+  },
+  "collection": {
+    "label": "La Colección",
+    "heading": "Seis residencias, 00.01 — 00.06",
+    "sub": "Toca cualquier residencia para ver el vídeo completo.",
+    "watch": "Ver vídeo",
+    "enquire": "Consultar esta residencia",
+    "close": "Cerrar",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "soon": "Vídeo disponible en breve",
+    "badge": { "new": "Nueva", "reserved": "Reservada", "sold": "Vendida" },
+    "spec": { "price": "Precio orientativo", "area": "Superficie construida", "beds": "Dormitorios", "location": "Ubicación" }
+  },
+  "credentials": {
+    "label": "Representación",
+    "heading": "Respaldado por cifras, no por adjetivos:",
+    "items": [
+      { "n": "01", "title": "27 días hasta oferta", "body": "Tiempo medio desde la publicación del vídeo hasta la oferta aceptada en los últimos 18 meses." },
+      { "n": "02", "title": "98,4 % del precio pedido", "body": "Precio medio obtenido frente al precio orientativo — negociado, nunca rebajado por defecto." },
+      { "n": "03", "title": "11.000 compradores cualificados", "body": "Una lista privada construida durante nueve años, a la que llego antes de publicar nada." }
+    ]
+  },
+  "agent": {
+    "label": "Sobre mí",
+    "heading": "Otra forma de mostrar una casa.",
+    "body": [
+      "Soy Jana. Durante nueve años he representado residencias en la Costa del Sol para propietarios que prefieren vender bien y con discreción antes que rápido y a gritos.",
+      "Cada propiedad que acepto se filma como debe filmarse: recorrida entera, con luz natural, de principio a fin. El comprador decide con el vídeo. Cuando nos vemos en la puerta, la conversación ya va en serio."
+    ],
+    "cta": "Trabajemos juntos"
+  },
+  "process": {
+    "label": "Proceso",
+    "heading": "Tres pasos, sin compromiso.",
+    "steps": [
+      { "n": "01", "title": "Envía tus datos", "body": "Con el email y el teléfono es suficiente. Sin formularios sobre tu presupuesto ni cuestionarios." },
+      { "n": "02", "title": "Te llamo en 24 h", "body": "Una llamada breve para entender qué buscas — o qué vendes. En español o en inglés." },
+      { "n": "03", "title": "Visitamos en privado", "body": "Visitas organizadas a tu medida, normalmente en 48 horas. Sin jornadas de puertas abiertas ni grupos." }
+    ]
+  },
+  "proof": {
+    "label": "Clientes",
+    "heading": "#trabajandoconjana",
+    "items": [
+      { "quote": "Se filmó el martes y el viernes ya había tres ofertas. Llevábamos once meses en el mercado con otra agencia.", "name": "M. Alarcón", "meta": "Villa, Benahavís" },
+      { "quote": "Compré por el vídeo. Volé una vez y firmé esa misma semana. Jana ya había respondido a todo lo que aún no le había preguntado.", "name": "D. Whitcombe", "meta": "Comprador, Londres" },
+      { "quote": "La única agente que me dijo que mi precio estaba mal. Tenía razón, y aun así saqué más de lo que esperaba.", "name": "C. Ferrer", "meta": "Piso, Marbella" },
+      { "quote": "Discreción absoluta. Nuestros vecinos no supieron que la casa estaba en venta hasta que dejó de estarlo.", "name": "Familia Lindqvist", "meta": "Finca, Estepona" },
+      { "quote": "El papeleo español me daba pánico. Se encargó del notario, del gestor y de todo lo demás.", "name": "S. Novak", "meta": "Comprador, Praga" },
+      { "quote": "Cuatro visitas, todas de compradores reales. Ningún curioso, que después de nuestra agencia anterior fue un lujo.", "name": "R. Okonkwo", "meta": "Adosado, Sotogrande" }
+    ]
+  },
+  "risk": {
+    "heading": "Antes de enviar nada.",
+    "items": [
+      { "title": "Sin compromiso", "body": "Una consulta es una conversación, no un mandato. No se firma nada hasta que tú quieras firmarlo." },
+      { "title": "Valoración gratuita", "body": "Si vendes, la tasación de mercado es gratuita y tuya, con independencia de con quién acabes vendiendo." },
+      { "title": "Tus datos se quedan aquí", "body": "Nunca se venden, nunca se ceden a otras agencias, nunca van a una lista de envío masivo." }
+    ]
+  },
+  "form": {
+    "label": "Consultar",
+    "heading": "Reserva una visita privada.",
+    "sub": "Solo email y teléfono. Te respondo en menos de 24 horas.",
+    "name": "Nombre completo",
+    "namePlaceholder": "María García",
+    "email": "Email",
+    "emailPlaceholder": "maria@ejemplo.com",
+    "phone": "Teléfono",
+    "phonePlaceholder": "+34 600 000 000",
+    "interest": "Me interesa",
+    "interestOptions": {
+      "buying": "Comprar una residencia",
+      "selling": "Vender mi propiedad",
+      "both": "Ambas / aún no lo sé"
+    },
+    "property": "Residencia",
+    "propertyAny": "Sin preferencia",
+    "consent": "Acepto recibir comunicaciones por email, teléfono y WhatsApp sobre propiedades y servicios, y acepto la",
+    "consentLink": "política de privacidad",
+    "consentNote": "Puedes retirar el consentimiento en cualquier momento. Baja con un clic en cada email.",
+    "submit": "Solicitar visita",
+    "submitting": "Enviando…",
+    "successHeading": "Recibido — gracias.",
+    "successBody": "Te escribo en menos de 24 horas, normalmente antes. Revisa la carpeta de spam si no tienes noticias.",
+    "errors": {
+      "name": "Introduce tu nombre.",
+      "email": "Introduce una dirección de email válida.",
+      "phone": "Introduce un número de teléfono válido.",
+      "consent": "Acepta la política de privacidad para continuar.",
+      "generic": "Algo ha fallado. Inténtalo de nuevo o escribe a hola@jana.example."
+    }
+  },
+  "faq": {
+    "label": "Preguntas",
+    "heading": "Las de siempre.",
+    "items": [
+      { "q": "¿Cuánto me cuesta como comprador?", "a": "Nada. La comisión la paga el vendedor. Tú pagas el precio de compra, los impuestos y tus honorarios legales — te doy el desglose por escrito antes de que te comprometas a nada." },
+      { "q": "Vendo. ¿Cuáles son tus honorarios?", "a": "Un único porcentaje sobre el precio de venta obtenido, acordado por escrito antes de empezar y pagadero solo al firmar. Sin pagos por adelantado, sin gastos de marketing, sin facturas de fotografía." },
+      { "q": "¿Puedo comprar en España siendo no residente?", "a": "Sí. Necesitarás un NIE y una cuenta bancaria española, y ambos se consiguen en días, no en semanas. Trabajo con un gestor y un abogado independiente que lo gestionan a diario." },
+      { "q": "¿Gestionas hipotecas?", "a": "No las intermedio, pero te presento a dos brókeres independientes que financian a no residentes, normalmente al 60–70 % del valor. Puedes usar el tuyo si lo prefieres." },
+      { "q": "¿En cuánto tiempo puedo ver una propiedad?", "a": "Normalmente en 48 horas, fines de semana incluidos. Si vienes en avión, dime tus fechas y agrupo las visitas en un solo día." },
+      { "q": "¿Son estas todas tus propiedades?", "a": "Estas seis son las que están filmadas y publicadas ahora mismo. Siempre hay producto fuera de mercado que nunca llega a una web — pregúntame en la llamada." }
+    ]
+  },
+  "footer": {
+    "tagline": "Representación inmobiliaria privada, Costa del Sol.",
+    "contactLabel": "Contacto",
+    "legalLabel": "Legal",
+    "privacy": "Política de privacidad",
+    "cookies": "Política de cookies",
+    "rights": "Todos los derechos reservados.",
+    "collection": "Colección"
+  },
+  "sticky": { "cta": "Reservar visita" },
+  "consent": {
+    "heading": "Cookies",
+    "body": "Uso cookies para medir qué anuncios traen visitas. No se carga nada hasta que elijas.",
+    "accept": "Aceptar todas",
+    "reject": "Rechazar no esenciales",
+    "manage": "Gestionar",
+    "save": "Guardar preferencias",
+    "necessary": "Estrictamente necesarias",
+    "necessaryNote": "Imprescindibles para que la web funcione. Siempre activas.",
+    "marketing": "Medición publicitaria",
+    "marketingNote": "Meta Pixel y Conversions API, para atribuir las consultas a los anuncios.",
+    "policy": "Política de cookies"
+  },
+  "locale": { "switchTo": "EN", "label": "Idioma" },
+  "advertorial": { "disclosure": "Publicidad", "backToCollection": "Ver la colección", "readingTime": "min de lectura", "by": "Por" }
+}

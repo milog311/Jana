@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────────
+   JANA — design tokens
+   Derived from the midnightcosmetics reference: clinical-minimal,
+   near-black/bone, all-caps micro-labels, tabular numerals for data.
+   Swap these values when real brand guidelines land — nothing else
+   in the codebase hardcodes a colour.
+   ────────────────────────────────────────────────────────────── */
+@theme {
+  --color-ink: #101112;
+  --color-ink-soft: #1b1d1f;
+  --color-paper: #f5f4f1;
+  --color-paper-dim: #eceae5;
+  --color-muted: #76736c;
+  --color-line: #dddad3;
+  --color-line-dark: #2a2c2f;
+  --color-brass: #a8814c;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-face), ui-monospace, "SF Mono", monospace;
+
+  --spacing-section: 7.5rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Data (prices, m², codes) always reads as tabular. */
+  .num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  ::selection {
+    background-color: var(--color-ink);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brass);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* All-caps micro-label — the reference's signature device. */
+  .label {
+    font-size: 0.6875rem;
+    line-height: 1;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Display type: tight tracking, optical sizing, never bold-bold. */
+  .display {
+    letter-spacing: -0.035em;
+    line-height: 0.95;
+    font-weight: 400;
+  }
+
+  .rule {
+    border-top: 1px solid var(--color-line);
+  }
+}
+
+/* ── Scroll reveal ───────────────────────────────────────────────
+   Progressive enhancement, deliberately. The hidden state is scoped to
+   `html.js`, a class set by an inline script before first paint. Without
+   JavaScript — or for a crawler that never runs it — every section renders
+   fully visible instead of a blank page below the hero.
+   ─────────────────────────────────────────────────────────────── */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.js .reveal[data-shown="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Marquee ticker ──────────────────────────────────────────── */
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 42s linear infinite;
+}
+
+/* Hide the horizontal scrollbar on the mobile reel rail. */
+.no-bar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-bar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ticker-track { animation: none; }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

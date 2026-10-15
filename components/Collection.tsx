@@ -211,7 +211,10 @@ function PropertyCard({
 
       <p className="label num mt-3 text-muted/80">
         {property.neighbourhood[locale]} · {formatBeds(property.beds)}{' '}
-        {dict.collection.spec.beds} · {formatArea(property.area)}
+        {property.beds.main === 1 && !property.beds.extra
+          ? dict.collection.spec.bedsOne
+          : dict.collection.spec.beds}{' '}
+        · {formatArea(property.area)}
       </p>
     </div>
   )

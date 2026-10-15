@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:media": "node --experimental-strip-types scripts/check-media.mjs"
   },
   "dependencies": {
     "hls.js": "^1.6.15",

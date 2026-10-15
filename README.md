@@ -131,6 +131,14 @@ ffmpeg -i input.mov -vf "scale=1080:1920:force_original_aspect_ratio=increase,cr
 ffmpeg -i output.mp4 -ss 1 -frames:v 1 -q:v 4 output.jpg
 ```
 
+Once the files are up, check them before wondering why a card is still on its
+placeholder — a kept accent, a capital `.MP4` or a nested folder all fail
+silently:
+
+```bash
+npm run check:media https://pub-xxxxxxxx.r2.dev
+```
+
 Playback is a plain `<video>`, not an iframe embed, so the player is ours to
 style and six reels don't mean six iframes. `play()` is called explicitly
 rather than relying on the `autoPlay` attribute — see the comment in

@@ -1,9 +1,9 @@
 /**
- * The six residences — Barcelona.
+ * The six residences - Barcelona.
  *
  * Facts (floor, surface, bedrooms, bathrooms, price) are taken verbatim from
  * the brief. Neighbourhoods are INFERRED from the street names and should be
- * confirmed. Hooks are written only from the given facts — nothing about
+ * confirmed. Hooks are written only from the given facts - nothing about
  * light, condition, views or finish is claimed, because none of that was
  * supplied.
  *
@@ -37,7 +37,7 @@ export type Property = {
   price: { amount: number; currency: 'EUR' }
   /** Square metres. `exterior` is terrace/patio, shown as "64 + 14 m²". */
   area: { interior: number; exterior?: number }
-  /** `extra` covers the "2 + 1" case — two bedrooms plus a small third room. */
+  /** `extra` covers the "2 + 1" case - two bedrooms plus a small third room. */
   beds: { main: number; extra?: number }
   baths: number
   floor: { en: string; es: string }

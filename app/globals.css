@@ -116,6 +116,21 @@
   display: none;
 }
 
+/*
+ * Inside the mobile reel rail the scroll reveal fights the swipe: cards enter
+ * horizontally, so each one fades and lifts under the finger mid-gesture,
+ * which reads as stutter rather than polish. The rail is already a deliberate
+ * motion; it does not need a second one on top. Desktop grid keeps its reveal.
+ */
+@media (max-width: 639px) {
+  .js .no-bar .reveal,
+  .js .no-bar .reveal[data-shown="false"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .ticker-track { animation: none; }

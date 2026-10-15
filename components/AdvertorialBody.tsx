@@ -140,7 +140,7 @@ function InlineReel({
             type="button"
             onClick={start}
             className="group absolute inset-0 h-full w-full"
-            aria-label={`${dict.collection.watch} — ${property.name}`}
+            aria-label={`${dict.collection.watch} - ${property.name}`}
           >
             <PropertyMedia property={property} soonLabel={null} />
             <span className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/70 to-transparent px-4 pb-4 pt-12">

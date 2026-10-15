@@ -4,7 +4,7 @@
  * ⚠️  TEMPLATE, NOT LEGAL ADVICE. Every [SQUARE BRACKET] is a placeholder you
  * must fill in, and the whole text needs review by a lawyer qualified in your
  * jurisdiction before you run paid traffic to it. Spain additionally requires
- * LSSI-CE identification details (name, NIF, registered address) — those live
+ * LSSI-CE identification details (name, NIF, registered address) - those live
  * in the `identity` section below.
  */
 
@@ -48,14 +48,14 @@ export const legal: Record<'en' | 'es', { privacy: LegalDoc; cookies: LegalDoc }
         {
           heading: 'Who else sees it',
           body: [
-            'Your details are never sold and never passed to other estate agencies. We share them only with: [HOSTING PROVIDER — Vercel Inc.], [CRM / EMAIL PROVIDER], and Meta for the advertising measurement described above.',
+            'Your details are never sold and never passed to other estate agencies. We share them only with: [HOSTING PROVIDER - Vercel Inc.], [CRM / EMAIL PROVIDER], and Meta for the advertising measurement described above.',
           ],
         },
         {
           heading: 'Your rights',
           body: [
             'You have the right to access, rectify, erase, restrict and object to the processing of your data, and to data portability. Write to [EMAIL] and we will respond within one month.',
-            'You may also lodge a complaint with your supervisory authority — in Spain, the Agencia Española de Protección de Datos (aepd.es).',
+            'You may also lodge a complaint with your supervisory authority - in Spain, the Agencia Española de Protección de Datos (aepd.es).',
           ],
         },
       ],
@@ -74,7 +74,7 @@ export const legal: Record<'en' | 'es', { privacy: LegalDoc; cookies: LegalDoc }
         {
           heading: 'Nothing loads before you choose',
           body: [
-            'No advertising script is requested until you accept. Rejecting leaves the site fully functional — we simply cannot tell which advert brought you here.',
+            'No advertising script is requested until you accept. Rejecting leaves the site fully functional - we simply cannot tell which advert brought you here.',
           ],
         },
         {
@@ -121,7 +121,7 @@ export const legal: Record<'en' | 'es', { privacy: LegalDoc; cookies: LegalDoc }
         {
           heading: 'Destinatarios',
           body: [
-            'Tus datos no se venden ni se ceden a otras agencias inmobiliarias. Solo se comparten con: [PROVEEDOR DE HOSTING — Vercel Inc.], [CRM / PROVEEDOR DE EMAIL] y Meta para la medición publicitaria descrita.',
+            'Tus datos no se venden ni se ceden a otras agencias inmobiliarias. Solo se comparten con: [PROVEEDOR DE HOSTING - Vercel Inc.], [CRM / PROVEEDOR DE EMAIL] y Meta para la medición publicitaria descrita.',
           ],
         },
         {

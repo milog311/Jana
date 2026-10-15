@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Jana — Colección Privada",
+    "title": "Jana - Colección Privada",
     "description": "Seis viviendas en Barcelona, mostradas en vídeo. Visitas privadas con cita previa."
   },
   "nav": {
@@ -19,18 +19,18 @@
   "hero": {
     "eyebrow": "Colección Privada 00.00",
     "title": "Seis residencias.\nMostradas en vídeo.",
-    "tagline": "Representación inmobiliaria de nueva generación en Barcelona — filmada, no fotografiada.",
+    "tagline": "Representación inmobiliaria de nueva generación en Barcelona - filmada, no fotografiada.",
     "cta": "Reservar visita privada",
     "secondary": "Ver la colección",
     "scroll": "Desliza"
   },
   "positioning": {
     "heading": "Expresiones de lugar.",
-    "body": "Una selección de seis — no un portal de anuncios. Cada vivienda se filma completa, con precio transparente, y se muestra solo con cita previa."
+    "body": "Una selección de seis - no un portal de anuncios. Cada vivienda se filma completa, con precio transparente, y se muestra solo con cita previa."
   },
   "collection": {
     "label": "La Colección",
-    "heading": "Seis residencias, 00.01 — 00.06",
+    "heading": "Seis residencias, 00.01 - 00.06",
     "sub": "Toca cualquier vivienda para ver el vídeo completo.",
     "watch": "Ver vídeo",
     "enquire": "Consultar esta vivienda",
@@ -65,7 +65,7 @@
       {
         "n": "02",
         "title": "98,4 % del precio pedido",
-        "body": "Precio medio obtenido frente al precio orientativo — negociado, nunca rebajado por defecto."
+        "body": "Precio medio obtenido frente al precio orientativo - negociado, nunca rebajado por defecto."
       },
       {
         "n": "03",
@@ -95,7 +95,7 @@
       {
         "n": "02",
         "title": "Te llamo en 24 h",
-        "body": "Una llamada breve para entender qué buscas — o qué vendes. En español o en inglés."
+        "body": "Una llamada breve para entender qué buscas - o qué vendes. En español o en inglés."
       },
       {
         "n": "03",
@@ -180,7 +180,7 @@
     "consentNote": "Puedes retirar el consentimiento en cualquier momento. Baja con un clic en cada email.",
     "submit": "Solicitar visita",
     "submitting": "Enviando…",
-    "successHeading": "Recibido — gracias.",
+    "successHeading": "Recibido - gracias.",
     "successBody": "Te escribo en menos de 24 horas, normalmente antes. Revisa la carpeta de spam si no tienes noticias.",
     "errors": {
       "name": "Introduce tu nombre.",
@@ -196,7 +196,7 @@
     "items": [
       {
         "q": "¿Cuánto me cuesta como comprador?",
-        "a": "Nada. La comisión la paga el vendedor. Tú pagas el precio de compra, los impuestos y tus honorarios legales — te doy el desglose por escrito antes de que te comprometas a nada."
+        "a": "Nada. La comisión la paga el vendedor. Tú pagas el precio de compra, los impuestos y tus honorarios legales - te doy el desglose por escrito antes de que te comprometas a nada."
       },
       {
         "q": "Vendo. ¿Cuáles son tus honorarios?",
@@ -216,7 +216,7 @@
       },
       {
         "q": "¿Son estas todas tus propiedades?",
-        "a": "Estas seis son las que están filmadas y publicadas ahora mismo. Siempre hay producto fuera de mercado que nunca llega a una web — pregúntame en la llamada."
+        "a": "Estas seis son las que están filmadas y publicadas ahora mismo. Siempre hay producto fuera de mercado que nunca llega a una web - pregúntame en la llamada."
       }
     ]
   },

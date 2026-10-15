@@ -169,7 +169,7 @@ export default function LeadForm({
                       .filter((property) => property.status !== 'sold')
                       .map((property) => (
                         <option key={property.code} value={property.code}>
-                          {property.code} — {property.name}
+                          {property.code} - {property.name}
                         </option>
                       ))}
                   </Select>

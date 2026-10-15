@@ -76,7 +76,7 @@ export default function Collection({ dict, locale, properties }: Props) {
 
   return (
     <section id="collection" className="border-t border-line bg-paper-dim/60">
-      <div className="mx-auto max-w-[1400px] px-5 py-24 sm:px-8 sm:py-32">
+      <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-8 sm:py-32">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -90,12 +90,24 @@ export default function Collection({ dict, locale, properties }: Props) {
         </Reveal>
 
         {/* Mobile: snap rail. Desktop: grid. */}
-        <div className="no-bar -mx-5 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-x-5 sm:gap-y-12 sm:overflow-visible sm:px-0 lg:grid-cols-3">
+        {/*
+          scroll-pl-5/pr-5 matter: with snap-align start and a padded rail,
+          the browser snaps the first card to the scrollport edge and silently
+          scrolls past the padding, so the left gutter vanishes and the card
+          sits flush against the screen. Scroll padding makes snapping respect
+          the gutter. overscroll-contain stops a horizontal flick from
+          chaining into the page scroll or a back-swipe.
+        */}
+        <div className="no-bar -mx-5 mt-8 flex sm:mt-12 snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain scroll-pl-5 scroll-pr-5 px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-x-5 sm:gap-y-12 sm:overflow-visible sm:px-0 lg:grid-cols-3">
           {properties.map((property, index) => (
             <Reveal
               key={property.code}
               delay={(index % 3) * 70}
-              className="w-[78vw] shrink-0 snap-start sm:w-auto"
+              /*
+                Narrower than a full column on purpose: the slice of the next
+                card showing at the edge is what tells a thumb the row scrolls.
+              */
+              className="w-[70vw] max-w-[300px] shrink-0 snap-start sm:w-auto sm:max-w-none"
             >
               <PropertyCard
                 property={property}
@@ -175,7 +187,7 @@ function PropertyCard({
       <button
         type="button"
         onClick={onOpen}
-        aria-label={`${action} — ${property.name}`}
+        aria-label={`${action} - ${property.name}`}
         className="relative block aspect-[9/16] w-full overflow-hidden rounded-sm bg-ink text-left"
       >
         <Badge status={property.status} dict={dict} />
@@ -197,8 +209,8 @@ function PropertyCard({
         </span>
       </button>
 
-      <div className="mt-4 flex items-baseline justify-between gap-3">
-        <h3 className="text-[0.9375rem] font-medium tracking-[-0.01em]">
+      <div className="mt-4 flex min-h-[2.75rem] items-baseline justify-between gap-3 sm:min-h-0">
+        <h3 className="min-w-0 text-[0.9375rem] font-medium tracking-[-0.01em]">
           <span className="num mr-2 font-mono text-[0.6875rem] text-muted">
             {property.code}
           </span>

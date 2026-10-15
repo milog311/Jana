@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Jana — Private Collection",
+    "title": "Jana - Private Collection",
     "description": "Six homes in Barcelona, shown on film. Private viewings by appointment."
   },
   "nav": {
@@ -19,18 +19,18 @@
   "hero": {
     "eyebrow": "Private Collection 00.00",
     "title": "Six residences.\nShown on film.",
-    "tagline": "Next-generation property representation in Barcelona — filmed, not photographed.",
+    "tagline": "Next-generation property representation in Barcelona - filmed, not photographed.",
     "cta": "Book a private viewing",
     "secondary": "See the collection",
     "scroll": "Scroll"
   },
   "positioning": {
     "heading": "Expressions of place.",
-    "body": "A curated six — not a listings feed. Each home is filmed in full, priced openly, and shown by appointment only."
+    "body": "A curated six - not a listings feed. Each home is filmed in full, priced openly, and shown by appointment only."
   },
   "collection": {
     "label": "The Collection",
-    "heading": "Six residences, 00.01 — 00.06",
+    "heading": "Six residences, 00.01 - 00.06",
     "sub": "Tap any home to watch the full film.",
     "watch": "Watch film",
     "enquire": "Enquire about this home",
@@ -65,7 +65,7 @@
       {
         "n": "02",
         "title": "98.4% of asking",
-        "body": "Average achieved price against guide price — negotiated, never discounted by default."
+        "body": "Average achieved price against guide price - negotiated, never discounted by default."
       },
       {
         "n": "03",
@@ -79,7 +79,7 @@
     "heading": "Redefining how homes are shown.",
     "body": [
       "I'm Jana. For nine years I've represented homes in Barcelona for owners who would rather sell quietly and well than loudly and fast.",
-      "Every property I take on is filmed properly — walked through, in natural light, start to finish. Buyers decide from the film. By the time we meet at the door, the conversation is already serious."
+      "Every property I take on is filmed properly - walked through, in natural light, start to finish. Buyers decide from the film. By the time we meet at the door, the conversation is already serious."
     ],
     "cta": "Work with me"
   },
@@ -95,7 +95,7 @@
       {
         "n": "02",
         "title": "I call within 24h",
-        "body": "A short call to understand what you're looking for — or what you're selling. In English or Spanish."
+        "body": "A short call to understand what you're looking for - or what you're selling. In English or Spanish."
       },
       {
         "n": "03",
@@ -180,7 +180,7 @@
     "consentNote": "You can withdraw consent at any time. One-click unsubscribe in every email.",
     "submit": "Request a viewing",
     "submitting": "Sending…",
-    "successHeading": "Received — thank you.",
+    "successHeading": "Received - thank you.",
     "successBody": "I'll be in touch within 24 hours, usually sooner. Check your spam folder if you don't hear from me.",
     "errors": {
       "name": "Please enter your name.",
@@ -196,7 +196,7 @@
     "items": [
       {
         "q": "What does it cost me as a buyer?",
-        "a": "Nothing. The seller pays the commission. You pay the purchase price, taxes and your own legal fees — I'll give you a written breakdown before you commit to anything."
+        "a": "Nothing. The seller pays the commission. You pay the purchase price, taxes and your own legal fees - I'll give you a written breakdown before you commit to anything."
       },
       {
         "q": "I'm selling. What's your fee?",
@@ -216,7 +216,7 @@
       },
       {
         "q": "Are these all the properties you have?",
-        "a": "These six are the ones currently filmed and publicly shown. There is always off-market stock that never reaches a website — ask me on the call."
+        "a": "These six are the ones currently filmed and publicly shown. There is always off-market stock that never reaches a website - ask me on the call."
       }
     ]
   },

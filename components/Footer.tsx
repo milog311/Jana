@@ -74,7 +74,7 @@ export default function Footer({
 
         <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-line-dark pt-6">
           <p className="label num text-paper/35">
-            ja/na 00.00 {new Date().getFullYear()}© — {dict.footer.rights}
+            ja/na 00.00 {new Date().getFullYear()}© - {dict.footer.rights}
           </p>
         </div>
       </div>

@@ -1,5 +1,5 @@
 /**
- * Advertorials — the editorial-styled second template.
+ * Advertorials - the editorial-styled second template.
  *
  * These read as an article and sell softly. The `Advertisement` disclosure at
  * the top is NOT optional: EU consumer law (and Spain's AGCM/LSSI regime)
@@ -57,7 +57,7 @@ export const advertorials: Advertorial[] = [
         {
           type: 'list',
           items: [
-            'Median, not mean — one freakishly fast sale cannot flatter the number.',
+            'Median, not mean - one freakishly fast sale cannot flatter the number.',
             'Last 18 months only, because the market in 2023 tells you nothing useful about today.',
             'Withdrawn and unsold instructions included, not quietly dropped.',
           ],
@@ -83,7 +83,7 @@ export const advertorials: Advertorial[] = [
         },
         {
           type: 'p',
-          text: 'That is the whole mechanism. There is no growth hack underneath it — just the unglamorous fact that showing a house properly costs more up front and saves everyone months on the other end.',
+          text: 'That is the whole mechanism. There is no growth hack underneath it - just the unglamorous fact that showing a house properly costs more up front and saves everyone months on the other end.',
         },
         {
           type: 'cta',

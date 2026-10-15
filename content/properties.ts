@@ -8,14 +8,19 @@
  * supplied.
  *
  * PUBLISHING THE FILMS
- * Each property below is set to `{ kind: 'r2' }`, which resolves to
- * `<R2 base>/<slug>.mp4` with a poster at `<R2 base>/<slug>.jpg`. So to go
- * live you upload twelve files named after the slugs and set
- * NEXT_PUBLIC_R2_PUBLIC_BASE_URL once — there is no per-property edit.
+ * `{ kind: 'r2' }` resolves to `<R2 base>/<slug>.mp4`, with the poster at the
+ * same name and a .jpg extension. `file` overrides that where the film is not
+ * named after the slug.
  *
- * Until that variable is set, `videoSrc()` returns null and every card falls
- * back to a designed typographic placeholder, which is why the page looks
- * finished today.
+ * 00.01 and 00.02 deliberately share one film: the reel walks both flats in
+ * sequence and quotes both sets of figures ("el primero, 64 m, 14 de terraza
+ * … el segundo, 70 m, 18 de terraza"), so there is no separate film to point
+ * each card at.
+ *
+ * 00.04 has no film yet and renders the placeholder.
+ *
+ * Until NEXT_PUBLIC_R2_PUBLIC_BASE_URL is set, `videoSrc()` returns null and
+ * every card falls back to the placeholder.
  */
 
 import type { VideoSource } from '@/lib/video'
@@ -63,7 +68,7 @@ export const properties: Property[] = [
       es: 'Séptima planta en la esquina Provença–Balmes, con terraza de 14 m².',
     },
     poster: null,
-    video: { kind: 'r2' },
+    video: { kind: 'r2', file: 'provenca-balmes.mp4' },
   },
   {
     code: '00.02',
@@ -82,7 +87,7 @@ export const properties: Property[] = [
       es: 'La mayor de las dos viviendas de la séptima — 70 m² y terraza de 18 m².',
     },
     poster: null,
-    video: { kind: 'r2' },
+    video: { kind: 'r2', file: 'provenca-balmes.mp4' },
   },
   {
     code: '00.03',
@@ -120,7 +125,7 @@ export const properties: Property[] = [
       es: 'Planta baja con 60 m² de exterior privado — los metros exteriores más amplios.',
     },
     poster: null,
-    video: { kind: 'r2' },
+    video: null, // Rector Triadó: no film shot yet
   },
   {
     code: '00.05',

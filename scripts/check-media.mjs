@@ -20,10 +20,31 @@ if (!base) {
   process.exit(1)
 }
 
-const expected = properties.flatMap((p) => [
-  { label: `${p.code} film  `, url: `${base}/${p.slug}.mp4` },
-  { label: `${p.code} poster`, url: `${base}/${p.slug}.jpg` },
-])
+/*
+ * Resolve exactly the way lib/video.ts does, or this reports files the site
+ * never asks for: `file` overrides the slug, and two properties may share one
+ * film (00.01 and 00.02 do), so the same object is only checked once.
+ */
+const skipped = []
+const seen = new Set()
+const expected = []
+
+for (const p of properties) {
+  if (!p.video) {
+    skipped.push(p.code)
+    continue
+  }
+  if (p.video.kind !== 'r2') continue
+
+  const film = p.video.file ?? `${p.slug}.mp4`
+  const poster = film.replace(/\.[^.]+$/, '.jpg')
+
+  for (const [kind, name] of [['film  ', film], ['poster', poster]]) {
+    if (seen.has(name)) continue
+    seen.add(name)
+    expected.push({ label: `${p.code} ${kind}`, url: `${base}/${name}` })
+  }
+}
 
 let missing = 0
 
@@ -56,9 +77,13 @@ for (const { label, url } of expected) {
   }
 }
 
+if (skipped.length > 0) {
+  console.log(`\n  (no film yet: ${skipped.join(', ')} — placeholder by design)`)
+}
+
 console.log(
   missing === 0
-    ? `\nAll ${expected.length} files present.`
+    ? `\nAll ${expected.length} expected files present.`
     : `\n${missing} of ${expected.length} missing — fix the names, then re-run.`,
 )
 process.exit(missing === 0 ? 0 : 1)

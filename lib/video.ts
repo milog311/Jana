@@ -56,8 +56,9 @@ export function videoSrc(property: Property): string | null {
 
 /**
  * Poster frame. An explicit `poster` on the property always wins.
- * R2 has no thumbnail generation, so it falls back to `<slug>.jpg` beside
- * the film — upload one with each video. Stream generates its own.
+ * R2 has no thumbnail generation, so it falls back to the film's own name
+ * with a .jpg extension — upload one beside each video. Stream generates
+ * its own.
  */
 export function videoPoster(property: Property): string | undefined {
   if (property.poster) return property.poster
@@ -66,7 +67,11 @@ export function videoPoster(property: Property): string | undefined {
   if (!source) return undefined
 
   if (source.kind === 'r2') {
-    return R2_BASE ? `${R2_BASE}/${property.slug}.jpg` : undefined
+    if (!R2_BASE) return undefined
+    // Derived from the film's own filename, so two properties sharing one
+    // film also share its poster instead of asking for a slug that isn't there.
+    const file = source.file ?? `${property.slug}.mp4`
+    return `${R2_BASE}/${file.replace(/\.[^.]+$/, '.jpg')}`
   }
 
   const root = streamRoot(source.streamId)

@@ -21,7 +21,7 @@ export default function LegalPage({
   return (
     <div className="min-h-svh">
       <header className="border-b border-line">
-        <div className="mx-auto flex h-14 max-w-[800px] items-center justify-between px-5">
+        <div className="mx-auto flex h-14 max-w-[800px] items-center justify-between px-6">
           <Link href={`/${locale}`} aria-label="Jana">
             <Wordmark />
           </Link>

@@ -154,7 +154,7 @@ function InlineReel({
       </div>
 
       {caption && (
-        <figcaption className="mx-auto mt-4 max-w-sm px-5 text-sm leading-relaxed text-muted sm:px-0">
+        <figcaption className="mx-auto mt-4 max-w-sm px-6 text-sm leading-relaxed text-muted sm:px-0">
           {caption}
         </figcaption>
       )}

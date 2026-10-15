@@ -37,7 +37,14 @@ export default function Header({
           : 'border-b border-transparent'
       }`}
     >
-      <div className="mx-auto grid h-14 max-w-[1400px] grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 sm:px-8">
+      {/*
+        Flex below md, grid from md. The nav is display:none on mobile, so it
+        leaves the grid entirely and the three columns collapse to two - which
+        dropped the wordmark into column one and stranded the language switch
+        in the middle. Flex with justify-between puts the wordmark left and the
+        language switch hard right.
+      */}
+      <div className="mx-auto flex h-14 max-w-[1400px] items-center justify-between gap-4 px-6 sm:px-8 md:grid md:grid-cols-[1fr_auto_1fr]">
         <nav className="hidden md:flex md:items-center md:gap-7" aria-label={dict.nav.collection}>
           {links.map((link) => (
             <a

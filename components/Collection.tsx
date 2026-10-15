@@ -12,7 +12,7 @@ import type { Locale } from '@/lib/locales'
 import { trackBoth } from '@/lib/pixel'
 import PropertyMedia, { posterFor } from './PropertyMedia'
 import VideoPlayer from './VideoPlayer'
-import { streamHls } from '@/lib/stream'
+import { videoSrc } from '@/lib/video'
 import Reveal from './Reveal'
 
 type Props = {
@@ -166,8 +166,9 @@ function PropertyCard({
   priority: boolean
   onOpen: () => void
 }) {
-  const hasFilm = Boolean(property.video)
-  const action = hasFilm ? dict.collection.watch : dict.collection.soon
+  // Availability means a URL that actually resolves — a configured host plus
+  // a video reference. The config object alone is not a playable film.
+  const action = videoSrc(property) ? dict.collection.watch : dict.collection.soon
 
   return (
     <div className="group">
@@ -201,10 +202,6 @@ function PropertyCard({
         </span>
       </div>
 
-      <p className="mt-1.5 text-sm leading-relaxed text-muted">
-        {property.hook[locale]}
-      </p>
-
       <p className="label num mt-3 text-muted/80">
         {property.neighbourhood[locale]} · {formatBeds(property.beds)}{' '}
         {dict.collection.spec.beds} · {formatArea(property.area)}
@@ -228,7 +225,7 @@ function Player({
   onPrev: () => void
   onNext: () => void
 }) {
-  const hls = property.video ? streamHls(property.video.streamId) : null
+  const src = videoSrc(property)
 
   return (
     <div
@@ -250,10 +247,10 @@ function Player({
             aspect ratio has nothing to resolve against and the panel
             collapses to zero width inside the flex row. */}
         <div className="relative mx-auto h-[52svh] w-auto max-w-full shrink-0 overflow-hidden rounded-sm bg-ink-soft [aspect-ratio:9/16] md:mx-0 md:h-[72svh]">
-          {hls ? (
+          {src ? (
             <VideoPlayer
               key={property.code}
-              src={hls}
+              src={src}
               poster={posterFor(property)}
               className="h-full w-full object-cover"
             />

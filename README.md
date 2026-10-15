@@ -43,7 +43,8 @@ Set these in Vercel → Project → Settings → Environment Variables.
 | `FB_CAPI_ACCESS_TOKEN` | **yes** | Conversions API token — never prefix with `NEXT_PUBLIC_` |
 | `FB_TEST_EVENT_CODE` | no | Routes events to Events Manager → Test Events |
 | `FB_GRAPH_VERSION` | no | Defaults to `v23.0`; bump when Meta deprecates it |
-| `NEXT_PUBLIC_CF_STREAM_CUSTOMER_CODE` | no | Cloudflare Stream customer code — see *Video* below |
+| `NEXT_PUBLIC_R2_PUBLIC_BASE_URL` | no | Public base URL of the R2 bucket — see *Video* below |
+| `NEXT_PUBLIC_CF_STREAM_CUSTOMER_CODE` | no | Only if you switch from R2 to Cloudflare Stream |
 | `LEAD_WEBHOOK_URL` | **yes** | Where leads are POSTed as JSON (CRM/Zapier/Make/Sheet) |
 
 **With no variables set the site still runs.** Tracking no-ops and leads are
@@ -100,29 +101,47 @@ GDPR treats these as different purposes, so they are two different controls:
 
 ## Adding content
 
-**A residence** — edit `content/properties.ts`. Upload the 9:16 film to
-Cloudflare Stream, then set `video: { streamId: '<uid>' }`. That's the only
-change: the HLS manifest and the poster frame are both derived from the UID
-(`lib/stream.ts`). Until you set it, each card renders a designed typographic
-placeholder, so the page looks finished while the films are in production.
+**A residence** — edit `content/properties.ts`. The films are **not** wired up
+per property: every entry is set to `{ kind: 'r2' }`, which resolves to
+`<base>/<slug>.mp4` with a poster at `<base>/<slug>.jpg`. Uploading twelve
+correctly-named files and setting one environment variable publishes all six.
 
-> Don't commit `.mp4` files — no adaptive bitrate, and Vercel will choke.
+Until `NEXT_PUBLIC_R2_PUBLIC_BASE_URL` is set, every card falls back to a
+designed typographic placeholder — which is why the page looks finished
+before the films exist.
 
 ### Video
 
-Films are served from **Cloudflare Stream**. Set
-`NEXT_PUBLIC_CF_STREAM_CUSTOMER_CODE` once, then each property only needs its
-video UID.
+Expected filenames in the bucket, one `.mp4` and one `.jpg` each:
 
-Playback uses a plain `<video>` rather than Cloudflare's iframe embed, so the
-player is ours to style and six reels don't mean six iframes. Safari plays HLS
-natively; everywhere else `hls.js` is **dynamically imported on first play**,
-so its ~130 KB never touches the initial bundle of a visitor who doesn't open
-a film.
+```
+provenca-balmes-1    provenca-balmes-2    placa-de-les-olles
+rector-triado        torrijos             bruc
+```
 
-> These URLs assume **signed URLs are OFF** for the videos. If you enable
-> signing, the manifest needs a short-lived token minted server-side and
-> `lib/stream.ts` stops working on its own.
+Encode vertical, and **always with `-movflags +faststart`** — without it the
+MP4 index sits at the end of the file and the browser downloads the whole
+thing before the first frame appears:
+
+```bash
+ffmpeg -i input.mov -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920" \
+  -c:v libx264 -crf 23 -preset slow -pix_fmt yuv420p \
+  -c:a aac -b:a 128k -movflags +faststart output.mp4
+
+ffmpeg -i output.mp4 -ss 1 -frames:v 1 -q:v 4 output.jpg
+```
+
+Playback is a plain `<video>`, not an iframe embed, so the player is ours to
+style and six reels don't mean six iframes. `play()` is called explicitly
+rather than relying on the `autoPlay` attribute — see the comment in
+`components/VideoPlayer.tsx`.
+
+**R2 serves exactly the file you upload.** There is no transcoding and no
+adaptive bitrate, so a viewer on weak mobile data gets the same bitrate as
+everyone else. Keep each file under ~15 MB. If reels start stalling for ad
+traffic, switching to Cloudflare Stream is a config change plus one field per
+property — `lib/video.ts` already supports it, including lazy-loaded `hls.js`
+for non-Safari browsers.
 
 **An advertorial** — add an entry to `content/advertorials.ts` with `en` and
 `es` copy. Block types: `p`, `h`, `quote`, `list`, `reel` (embeds a residence

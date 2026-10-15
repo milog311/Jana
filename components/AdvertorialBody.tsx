@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { properties, formatPrice } from '@/content/properties'
-import { streamHls } from '@/lib/stream'
+import { videoSrc } from '@/lib/video'
 import type { Block } from '@/content/advertorials'
 import type { Dictionary } from '@/app/[lang]/dictionaries'
 import type { Locale } from '@/lib/locales'
@@ -112,7 +112,7 @@ function InlineReel({
 
   if (!property) return null
 
-  const hls = property.video ? streamHls(property.video.streamId) : null
+  const src = videoSrc(property)
 
   function start() {
     setPlaying(true)
@@ -129,9 +129,9 @@ function InlineReel({
   return (
     <figure className="my-12 -mx-5 sm:mx-0">
       <div className="relative mx-auto aspect-[9/16] max-w-sm overflow-hidden rounded-sm bg-ink">
-        {playing && hls ? (
+        {playing && src ? (
           <VideoPlayer
-            src={hls}
+            src={src}
             poster={posterFor(property)}
             className="h-full w-full object-cover"
           />

@@ -1,15 +1,17 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { isHls } from '@/lib/video'
 
 /**
- * Plays a Cloudflare Stream HLS manifest in a plain <video>, so the player is
- * ours to style rather than an iframe we can't reach into.
+ * Plays a film in a plain <video>, so the player is ours to style rather than
+ * an iframe we can't reach into.
  *
- * Safari (and iOS, where every browser is Safari underneath) plays HLS
- * natively. Everywhere else needs hls.js, which is imported dynamically on
- * first play — it is far too heavy to sit in the initial bundle of a landing
- * page that may never open a film.
+ * A plain .mp4 (R2) just plays. An HLS manifest (Stream) plays natively in
+ * Safari — and on iOS, where every browser is Safari underneath — but needs
+ * hls.js everywhere else. That import is dynamic and only happens for HLS, so
+ * its ~130 KB never reaches a visitor watching an MP4, or one who opens no
+ * film at all.
  */
 export default function VideoPlayer({
   src,
@@ -34,9 +36,29 @@ export default function VideoPlayer({
     const video = ref.current
     if (!video) return
 
-    const nativeHls = video.canPlayType('application/vnd.apple.mpegurl')
-    if (nativeHls) {
+    /*
+     * Play explicitly rather than relying on the autoPlay attribute. With HLS
+     * the source attaches asynchronously, well after the attribute has been
+     * evaluated against an empty <video>, so the attribute alone silently
+     * does nothing. A rejected play() is fine and expected — browsers block
+     * unmuted autoplay without user activation — and the controls are already
+     * on screen, so the viewer just presses play.
+     */
+    const start = () => {
+      if (!autoPlay) return
+      video.play().catch(() => {})
+    }
+
+    // Progressive MP4: nothing to negotiate.
+    if (!isHls(src)) {
       video.src = src
+      start()
+      return
+    }
+
+    if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = src
+      start()
       return
     }
 
@@ -49,22 +71,26 @@ export default function VideoPlayer({
         if (!Hls.isSupported()) {
           // Last resort: let the browser try the manifest itself.
           video.src = src
+          start()
           return
         }
         const instance = new Hls({ enableWorker: true })
         hls = instance
         instance.loadSource(src)
         instance.attachMedia(video)
+        instance.on(Hls.Events.MANIFEST_PARSED, start)
       })
       .catch(() => {
-        if (!destroyed) video.src = src
+        if (destroyed) return
+        video.src = src
+        start()
       })
 
     return () => {
       destroyed = true
       hls?.destroy()
     }
-  }, [src])
+  }, [src, autoPlay])
 
   return (
     <video

@@ -1,12 +1,8 @@
 import type { Property } from '@/content/properties'
-import { streamPoster } from '@/lib/stream'
+import { videoPoster } from '@/lib/video'
 
-/** Poster for a residence: explicit override, else the Stream thumbnail. */
-export function posterFor(property: Property): string | undefined {
-  if (property.poster) return property.poster
-  if (property.video) return streamPoster(property.video.streamId) ?? undefined
-  return undefined
-}
+/** Poster for a residence — see lib/video.ts for how it is resolved. */
+export const posterFor = videoPoster
 
 /**
  * A residence's still image.

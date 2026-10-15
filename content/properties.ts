@@ -7,11 +7,18 @@
  * light, condition, views or finish is claimed, because none of that was
  * supplied.
  *
- * To publish a film: upload to Cloudflare Stream, then set `video.streamId`
- * to the video's UID. Playback URL and poster are derived from it (see
- * lib/stream.ts) — no other change needed. Until then each card renders a
- * designed typographic placeholder.
+ * PUBLISHING THE FILMS
+ * Each property below is set to `{ kind: 'r2' }`, which resolves to
+ * `<R2 base>/<slug>.mp4` with a poster at `<R2 base>/<slug>.jpg`. So to go
+ * live you upload twelve files named after the slugs and set
+ * NEXT_PUBLIC_R2_PUBLIC_BASE_URL once — there is no per-property edit.
+ *
+ * Until that variable is set, `videoSrc()` returns null and every card falls
+ * back to a designed typographic placeholder, which is why the page looks
+ * finished today.
  */
+
+import type { VideoSource } from '@/lib/video'
 
 export type PropertyStatus = 'new' | 'available' | 'reserved' | 'sold'
 
@@ -32,10 +39,10 @@ export type Property = {
   name: string
   neighbourhood: { en: string; es: string }
   hook: { en: string; es: string }
-  /** Overrides the Cloudflare Stream thumbnail when set. */
+  /** Overrides the derived poster when set. */
   poster: string | null
-  /** Cloudflare Stream video UID. */
-  video: { streamId: string } | null
+  /** Where the film is hosted. See lib/video.ts. */
+  video: VideoSource | null
 }
 
 export const properties: Property[] = [
@@ -56,7 +63,7 @@ export const properties: Property[] = [
       es: 'Séptima planta en la esquina Provença–Balmes, con terraza de 14 m².',
     },
     poster: null,
-    video: null,
+    video: { kind: 'r2' },
   },
   {
     code: '00.02',
@@ -75,7 +82,7 @@ export const properties: Property[] = [
       es: 'La mayor de las dos viviendas de la séptima — 70 m² y terraza de 18 m².',
     },
     poster: null,
-    video: null,
+    video: { kind: 'r2' },
   },
   {
     code: '00.03',
@@ -94,7 +101,7 @@ export const properties: Property[] = [
       es: 'Dos dormitorios en una plaza del Born, el precio más accesible de la colección.',
     },
     poster: null,
-    video: null,
+    video: { kind: 'r2' },
   },
   {
     code: '00.04',
@@ -113,7 +120,7 @@ export const properties: Property[] = [
       es: 'Planta baja con 60 m² de exterior privado — los metros exteriores más amplios.',
     },
     poster: null,
-    video: null,
+    video: { kind: 'r2' },
   },
   {
     code: '00.05',
@@ -132,7 +139,7 @@ export const properties: Property[] = [
       es: 'Dos dormitorios, dos baños, primera planta en pleno Gràcia.',
     },
     poster: null,
-    video: null,
+    video: { kind: 'r2' },
   },
   {
     code: '00.06',
@@ -151,7 +158,7 @@ export const properties: Property[] = [
       es: '157 m² en el carrer del Bruc — la superficie más amplia de la colección.',
     },
     poster: null,
-    video: null,
+    video: { kind: 'r2' },
   },
 ]
 

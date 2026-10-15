@@ -12,7 +12,7 @@ export default function Footer({
 }) {
   return (
     <footer className="border-t border-line-dark bg-ink text-paper">
-      <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-8 sm:py-20">
+      <div className="mx-auto max-w-[1400px] px-6 py-16 sm:px-8 sm:py-20">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Wordmark />

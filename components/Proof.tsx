@@ -5,7 +5,7 @@ import Reveal from './Reveal'
 export default function Proof({ dict }: { dict: Dictionary }) {
   return (
     <section className="border-t border-line bg-paper-dim/60">
-      <div className="mx-auto max-w-[1400px] px-5 py-24 sm:px-8 sm:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 py-24 sm:px-8 sm:py-32">
         <Reveal>
           <p className="label text-muted">{dict.proof.label}</p>
           <h2 className="display mt-5 text-[8vw] lowercase sm:text-[3.25rem]">

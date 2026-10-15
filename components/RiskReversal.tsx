@@ -4,7 +4,7 @@ import Reveal from './Reveal'
 /** Removes the last objections immediately before the form. */
 export default function RiskReversal({ dict }: { dict: Dictionary }) {
   return (
-    <section className="mx-auto max-w-[1400px] px-5 pt-24 sm:px-8 sm:pt-32">
+    <section className="mx-auto max-w-[1400px] px-6 pt-24 sm:px-8 sm:pt-32">
       <Reveal>
         <h2 className="display text-[7vw] sm:text-[2.5rem]">{dict.risk.heading}</h2>
         <div className="mt-12 grid gap-8 md:grid-cols-3">

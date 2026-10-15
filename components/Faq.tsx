@@ -8,7 +8,7 @@ import Reveal from './Reveal'
 export default function Faq({ dict }: { dict: Dictionary }) {
   return (
     <section id="faq" className="border-t border-line">
-      <div className="mx-auto max-w-[1400px] px-5 py-24 sm:px-8 sm:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 py-24 sm:px-8 sm:py-32">
         <div className="grid gap-12 md:grid-cols-12 md:gap-10">
           <Reveal className="md:col-span-4">
             <p className="label text-muted">{dict.faq.label}</p>

@@ -76,7 +76,7 @@ export default function Collection({ dict, locale, properties }: Props) {
 
   return (
     <section id="collection" className="border-t border-line bg-paper-dim/60">
-      <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-8 sm:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 py-16 sm:px-8 sm:py-32">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
@@ -91,14 +91,20 @@ export default function Collection({ dict, locale, properties }: Props) {
 
         {/* Mobile: snap rail. Desktop: grid. */}
         {/*
-          scroll-pl-5/pr-5 matter: with snap-align start and a padded rail,
+          scroll-pl-6/pr-6 matter: with snap-align start and a padded rail,
           the browser snaps the first card to the scrollport edge and silently
           scrolls past the padding, so the left gutter vanishes and the card
           sits flush against the screen. Scroll padding makes snapping respect
           the gutter. overscroll-contain stops a horizontal flick from
           chaining into the page scroll or a back-swipe.
+
+          snap-proximity, not mandatory: mandatory re-snaps on ANY scroll of
+          the container, so a mostly-vertical swipe with a little sideways
+          drift yanked the rail horizontally while the page moved vertically.
+          That two-axis fight is what felt glitchy. Proximity ignores small
+          drift and still snaps cleanly on a deliberate swipe.
         */}
-        <div className="no-bar -mx-5 mt-8 flex sm:mt-12 snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain scroll-pl-5 scroll-pr-5 px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-x-5 sm:gap-y-12 sm:overflow-visible sm:px-0 lg:grid-cols-3">
+        <div className="no-bar -mx-6 mt-8 flex sm:mt-12 snap-x snap-proximity gap-4 overflow-x-auto overscroll-x-contain scroll-pl-6 scroll-pr-6 px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-x-5 sm:gap-y-12 sm:overflow-visible sm:px-0 lg:grid-cols-3">
           {properties.map((property, index) => (
             <Reveal
               key={property.code}
@@ -209,7 +215,7 @@ function PropertyCard({
         </span>
       </button>
 
-      <div className="mt-4 flex min-h-[2.75rem] items-baseline justify-between gap-3 sm:min-h-0">
+      <div className="mt-4 flex min-h-[2.75rem] items-baseline justify-between gap-3 px-0.5 sm:min-h-0 sm:px-0">
         <h3 className="min-w-0 text-[0.9375rem] font-medium tracking-[-0.01em]">
           <span className="num mr-2 font-mono text-[0.6875rem] text-muted">
             {property.code}
@@ -221,7 +227,7 @@ function PropertyCard({
         </span>
       </div>
 
-      <p className="label num mt-3 text-muted/80">
+      <p className="label num mt-3 px-0.5 text-muted/80 sm:px-0">
         {property.neighbourhood[locale]} · {formatBeds(property.beds)}{' '}
         {property.beds.main === 1 && !property.beds.extra
           ? dict.collection.spec.bedsOne

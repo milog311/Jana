@@ -16,7 +16,7 @@ export default function Agent({
 }) {
   return (
     <section id="about" className="bg-ink text-paper">
-      <div className="mx-auto max-w-[1400px] px-5 py-24 sm:px-8 sm:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 py-24 sm:px-8 sm:py-32">
         <div className="grid gap-12 md:grid-cols-12 md:gap-10">
           <Reveal className="md:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-ink-soft">

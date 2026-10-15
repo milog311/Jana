@@ -5,7 +5,7 @@ import Reveal from './Reveal'
 export default function Credentials({ dict }: { dict: Dictionary }) {
   return (
     <section className="border-t border-line">
-      <div className="mx-auto max-w-[1400px] px-5 py-24 sm:px-8 sm:py-32">
+      <div className="mx-auto max-w-[1400px] px-6 py-24 sm:px-8 sm:py-32">
         <Reveal>
           <p className="label text-muted">{dict.credentials.label}</p>
           <h2 className="display mt-5 max-w-[26ch] text-[7vw] sm:text-[3rem]">

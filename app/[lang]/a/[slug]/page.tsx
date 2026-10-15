@@ -56,7 +56,7 @@ export default async function AdvertorialPage({
       <Header dict={dict} locale={lang} />
 
       <main>
-        <article className="mx-auto max-w-[720px] px-5 py-16 sm:py-24">
+        <article className="mx-auto max-w-[720px] px-6 py-16 sm:py-24">
           {/* Required disclosure — advertising dressed as editorial must say so. */}
           <p className="label inline-block rounded-full border border-line px-3 py-1.5 text-muted">
             {dict.advertorial.disclosure}

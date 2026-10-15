@@ -3,7 +3,7 @@ import Reveal from './Reveal'
 
 export default function Process({ dict }: { dict: Dictionary }) {
   return (
-    <section id="process" className="mx-auto max-w-[1400px] px-5 py-24 sm:px-8 sm:py-32">
+    <section id="process" className="mx-auto max-w-[1400px] px-6 py-24 sm:px-8 sm:py-32">
       <Reveal>
         <p className="label text-muted">{dict.process.label}</p>
         <h2 className="display mt-5 text-[8vw] sm:text-[3.25rem]">

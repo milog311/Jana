@@ -31,7 +31,7 @@ export default function LegalPage({
         </div>
       </header>
 
-      <main className="mx-auto max-w-[800px] px-5 py-20">
+      <main className="mx-auto max-w-[800px] px-6 py-20">
         <h1 className="display text-[10vw] sm:text-[3.5rem]">{title}</h1>
         <p className="label mt-6 text-muted">{updated}</p>
 

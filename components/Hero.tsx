@@ -45,7 +45,7 @@ export default function Hero({
         />
       )}
 
-      <div className="mx-auto w-full max-w-[1400px] px-5 pb-16 pt-28 sm:px-8 sm:pb-20">
+      <div className="mx-auto w-full max-w-[1400px] px-6 pb-16 pt-28 sm:px-8 sm:pb-20">
         <p className="label text-paper/50">{dict.hero.eyebrow}</p>
 
         <h1 className="display mt-7 max-w-[20ch] text-[13vw] sm:text-[8vw] lg:text-[5.75rem]">

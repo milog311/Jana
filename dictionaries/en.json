@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Jana — Private Collection",
-    "description": "Six residences on the Costa del Sol, shown on film. Private viewings by appointment."
+    "description": "Six homes in Barcelona, shown on film. Private viewings by appointment."
   },
   "nav": {
     "collection": "Collection",
@@ -19,42 +19,65 @@
   "hero": {
     "eyebrow": "Private Collection 00.00",
     "title": "Six residences.\nShown on film.",
-    "tagline": "Next-generation property representation on the Costa del Sol — filmed, not photographed.",
+    "tagline": "Next-generation property representation in Barcelona — filmed, not photographed.",
     "cta": "Book a private viewing",
     "secondary": "See the collection",
     "scroll": "Scroll"
   },
   "positioning": {
     "heading": "Expressions of place.",
-    "body": "A curated six — not a listings feed. Each residence is filmed in full, priced openly, and shown by appointment only."
+    "body": "A curated six — not a listings feed. Each home is filmed in full, priced openly, and shown by appointment only."
   },
   "collection": {
     "label": "The Collection",
     "heading": "Six residences, 00.01 — 00.06",
-    "sub": "Tap any residence to watch the full film.",
+    "sub": "Tap any home to watch the full film.",
     "watch": "Watch film",
-    "enquire": "Enquire about this residence",
+    "enquire": "Enquire about this home",
     "close": "Close",
     "prev": "Previous",
     "next": "Next",
     "soon": "Film arriving shortly",
-    "badge": { "new": "New", "reserved": "Reserved", "sold": "Sold" },
-    "spec": { "price": "Guide price", "area": "Built area", "beds": "Bedrooms", "location": "Location" }
+    "badge": {
+      "new": "New",
+      "reserved": "Reserved",
+      "sold": "Sold"
+    },
+    "spec": {
+      "price": "Guide price",
+      "area": "Built area",
+      "beds": "Bedrooms",
+      "location": "Neighbourhood",
+      "floor": "Floor",
+      "baths": "Bathrooms"
+    }
   },
   "credentials": {
     "label": "Representation",
     "heading": "Backed by numbers, not adjectives:",
     "items": [
-      { "n": "01", "title": "27 days to offer", "body": "Median time from first film published to accepted offer across the last 18 months." },
-      { "n": "02", "title": "98.4% of asking", "body": "Average achieved price against guide price — negotiated, never discounted by default." },
-      { "n": "03", "title": "11,000 qualified buyers", "body": "A private distribution list built over nine years, reached before anything goes public." }
+      {
+        "n": "01",
+        "title": "27 days to offer",
+        "body": "Median time from first film published to accepted offer across the last 18 months."
+      },
+      {
+        "n": "02",
+        "title": "98.4% of asking",
+        "body": "Average achieved price against guide price — negotiated, never discounted by default."
+      },
+      {
+        "n": "03",
+        "title": "11,000 qualified buyers",
+        "body": "A private distribution list built over nine years, reached before anything goes public."
+      }
     ]
   },
   "agent": {
     "label": "About",
     "heading": "Redefining how homes are shown.",
     "body": [
-      "I'm Jana. For nine years I've represented residences on the Costa del Sol for owners who would rather sell quietly and well than loudly and fast.",
+      "I'm Jana. For nine years I've represented homes in Barcelona for owners who would rather sell quietly and well than loudly and fast.",
       "Every property I take on is filmed properly — walked through, in natural light, start to finish. Buyers decide from the film. By the time we meet at the door, the conversation is already serious."
     ],
     "cta": "Work with me"
@@ -63,29 +86,74 @@
     "label": "Process",
     "heading": "Three steps, no obligation.",
     "steps": [
-      { "n": "01", "title": "Send your details", "body": "Email and phone is enough. No forms about your budget, no qualification quiz." },
-      { "n": "02", "title": "I call within 24h", "body": "A short call to understand what you're looking for — or what you're selling. In English or Spanish." },
-      { "n": "03", "title": "We view privately", "body": "Viewings arranged around you, typically within 48 hours. No open houses, no crowds." }
+      {
+        "n": "01",
+        "title": "Send your details",
+        "body": "Email and phone is enough. No forms about your budget, no qualification quiz."
+      },
+      {
+        "n": "02",
+        "title": "I call within 24h",
+        "body": "A short call to understand what you're looking for — or what you're selling. In English or Spanish."
+      },
+      {
+        "n": "03",
+        "title": "We view privately",
+        "body": "Viewings arranged around you, typically within 48 hours. No open houses, no crowds."
+      }
     ]
   },
   "proof": {
     "label": "Clients",
     "heading": "#workingwithjana",
     "items": [
-      { "quote": "Filmed on the Tuesday, three offers by the Friday. We had been on the market eleven months with someone else.", "name": "M. Alarcón", "meta": "Villa, Benahavís" },
-      { "quote": "I bought from the film. Flew in once, signed that week. Jana had already answered every question I hadn't asked yet.", "name": "D. Whitcombe", "meta": "Buyer, London" },
-      { "quote": "The only agent who told me my asking price was wrong. She was right, and I still got more than I expected.", "name": "C. Ferrer", "meta": "Apartment, Marbella" },
-      { "quote": "Discreet throughout. Our neighbours never knew the house was for sale until it wasn't.", "name": "The Lindqvist family", "meta": "Finca, Estepona" },
-      { "quote": "Spanish paperwork terrified me. She handled the notary, the gestor, all of it.", "name": "S. Novak", "meta": "Buyer, Prague" },
-      { "quote": "Four viewings, all genuine buyers. No tyre-kickers, which after our last agent felt like a luxury.", "name": "R. Okonkwo", "meta": "Townhouse, Sotogrande" }
+      {
+        "quote": "Filmed on the Tuesday, three offers by the Friday. We had been on the market eleven months with someone else.",
+        "name": "M. Alarcón",
+        "meta": "Eixample"
+      },
+      {
+        "quote": "I bought from the film. Flew in once, signed that week. Jana had already answered every question I hadn't asked yet.",
+        "name": "D. Whitcombe",
+        "meta": "Buyer, London"
+      },
+      {
+        "quote": "The only agent who told me my asking price was wrong. She was right, and I still got more than I expected.",
+        "name": "C. Ferrer",
+        "meta": "Gràcia"
+      },
+      {
+        "quote": "Discreet throughout. Our neighbours never knew the flat was for sale until it wasn’t.",
+        "name": "The Lindqvist family",
+        "meta": "El Born"
+      },
+      {
+        "quote": "Spanish paperwork terrified me. She handled the notary, the gestor, all of it.",
+        "name": "S. Novak",
+        "meta": "Buyer, Prague"
+      },
+      {
+        "quote": "Four viewings, all genuine buyers. No tyre-kickers, which after our last agent felt like a luxury.",
+        "name": "R. Okonkwo",
+        "meta": "Sant Gervasi"
+      }
     ]
   },
   "risk": {
     "heading": "Before you send anything.",
     "items": [
-      { "title": "No obligation", "body": "An enquiry is a conversation, not a mandate. Nothing is signed until you want it signed." },
-      { "title": "Valuation at no cost", "body": "If you're selling, the market appraisal is free and yours to keep, whoever you list with." },
-      { "title": "Your details stay here", "body": "Never sold, never passed to third-party agencies, never added to a bulk mailing list." }
+      {
+        "title": "No obligation",
+        "body": "An enquiry is a conversation, not a mandate. Nothing is signed until you want it signed."
+      },
+      {
+        "title": "Valuation at no cost",
+        "body": "If you're selling, the market appraisal is free and yours to keep, whoever you list with."
+      },
+      {
+        "title": "Your details stay here",
+        "body": "Never sold, never passed to third-party agencies, never added to a bulk mailing list."
+      }
     ]
   },
   "form": {
@@ -125,16 +193,34 @@
     "label": "Questions",
     "heading": "Asked often.",
     "items": [
-      { "q": "What does it cost me as a buyer?", "a": "Nothing. The seller pays the commission. You pay the purchase price, taxes and your own legal fees — I'll give you a written breakdown before you commit to anything." },
-      { "q": "I'm selling. What's your fee?", "a": "A single percentage of the achieved sale price, agreed in writing before we start, payable only on completion. No upfront fees, no marketing charges, no photography invoices." },
-      { "q": "Can I buy in Spain as a non-resident?", "a": "Yes. You'll need an NIE number and a Spanish bank account, both of which take days rather than weeks. I work with a gestor and an independent lawyer who handle this routinely." },
-      { "q": "Do you arrange mortgages?", "a": "I don't broker them, but I'll introduce you to two independent brokers who lend to non-residents, typically at 60–70% loan-to-value. You're free to use your own." },
-      { "q": "How quickly can I see a property?", "a": "Usually within 48 hours, including weekends. If you're flying in, tell me your dates and I'll group viewings into a single day." },
-      { "q": "Are these all the properties you have?", "a": "These six are the ones currently filmed and publicly shown. There is always off-market stock that never reaches a website — ask me on the call." }
+      {
+        "q": "What does it cost me as a buyer?",
+        "a": "Nothing. The seller pays the commission. You pay the purchase price, taxes and your own legal fees — I'll give you a written breakdown before you commit to anything."
+      },
+      {
+        "q": "I'm selling. What's your fee?",
+        "a": "A single percentage of the achieved sale price, agreed in writing before we start, payable only on completion. No upfront fees, no marketing charges, no photography invoices."
+      },
+      {
+        "q": "Can I buy in Spain as a non-resident?",
+        "a": "Yes. You'll need an NIE number and a Spanish bank account, both of which take days rather than weeks. I work with a gestor and an independent lawyer who handle this routinely."
+      },
+      {
+        "q": "Do you arrange mortgages?",
+        "a": "I don't broker them, but I'll introduce you to two independent brokers who lend to non-residents, typically at 60–70% loan-to-value. You're free to use your own."
+      },
+      {
+        "q": "How quickly can I see a property?",
+        "a": "Usually within 48 hours, including weekends. If you’re flying in, tell me your dates and I’ll group viewings into a single day."
+      },
+      {
+        "q": "Are these all the properties you have?",
+        "a": "These six are the ones currently filmed and publicly shown. There is always off-market stock that never reaches a website — ask me on the call."
+      }
     ]
   },
   "footer": {
-    "tagline": "Private property representation, Costa del Sol.",
+    "tagline": "Private property representation, Barcelona.",
     "contactLabel": "Contact",
     "legalLabel": "Legal",
     "privacy": "Privacy policy",
@@ -142,7 +228,9 @@
     "rights": "All rights reserved.",
     "collection": "Collection"
   },
-  "sticky": { "cta": "Book a viewing" },
+  "sticky": {
+    "cta": "Book a viewing"
+  },
   "consent": {
     "heading": "Cookies",
     "body": "I use cookies to measure which adverts bring people here. Nothing loads until you choose.",
@@ -156,6 +244,14 @@
     "marketingNote": "Meta Pixel and Conversions API, used to attribute enquiries to adverts.",
     "policy": "Cookie policy"
   },
-  "locale": { "switchTo": "ES", "label": "Language" },
-  "advertorial": { "disclosure": "Advertisement", "backToCollection": "View the collection", "readingTime": "min read", "by": "By" }
+  "locale": {
+    "switchTo": "ES",
+    "label": "Language"
+  },
+  "advertorial": {
+    "disclosure": "Advertisement",
+    "backToCollection": "View the collection",
+    "readingTime": "min read",
+    "by": "By"
+  }
 }

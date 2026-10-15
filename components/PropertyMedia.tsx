@@ -1,30 +1,38 @@
 import type { Property } from '@/content/properties'
+import { streamPoster } from '@/lib/stream'
+
+/** Poster for a residence: explicit override, else the Stream thumbnail. */
+export function posterFor(property: Property): string | undefined {
+  if (property.poster) return property.poster
+  if (property.video) return streamPoster(property.video.streamId) ?? undefined
+  return undefined
+}
 
 /**
- * A residence's visual.
+ * A residence's still image.
  *
- * With no film or poster uploaded yet it renders a typographic placeholder in
- * the property's tone — deliberately designed rather than a grey box, so the
- * page reads finished while you shoot. Drop in `poster` / `video` and this
- * swaps over with no other changes.
+ * With no film uploaded and no poster set it renders a typographic
+ * placeholder in the property's tone — deliberately designed rather than a
+ * grey box, so the page reads finished while the films are in production.
  */
 export default function PropertyMedia({
   property,
-  locale,
   soonLabel,
   priority = false,
 }: {
   property: Property
-  locale: 'en' | 'es'
-  soonLabel: string
+  /** Pass null where the surrounding UI already states the film's status. */
+  soonLabel?: string | null
   priority?: boolean
 }) {
-  if (property.poster) {
+  const poster = posterFor(property)
+
+  if (poster) {
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
-        src={property.poster}
-        alt={property.name[locale]}
+        src={poster}
+        alt={property.name}
         className="absolute inset-0 h-full w-full object-cover"
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
@@ -48,7 +56,11 @@ export default function PropertyMedia({
         {property.code.replace('.', '')}
       </span>
 
-      <span className="label text-white/35">{soonLabel}</span>
+      {soonLabel ? (
+        <span className="label text-white/35">{soonLabel}</span>
+      ) : (
+        <span aria-hidden="true" />
+      )}
     </div>
   )
 }

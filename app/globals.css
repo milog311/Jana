@@ -18,6 +18,7 @@
   --color-brass: #a8814c;
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-face), ui-serif, Georgia, serif;
   --font-mono: var(--font-mono-face), ui-monospace, "SF Mono", monospace;
 
   --spacing-section: 7.5rem;
@@ -65,10 +66,12 @@
     font-weight: 500;
   }
 
-  /* Display type: tight tracking, optical sizing, never bold-bold. */
+  /* Display type: the brand's high-contrast serif. A serif at this size
+     needs looser tracking than the sans did, and no synthetic weight. */
   .display {
-    letter-spacing: -0.035em;
-    line-height: 0.95;
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+    line-height: 1;
     font-weight: 400;
   }
 

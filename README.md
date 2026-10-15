@@ -43,6 +43,7 @@ Set these in Vercel → Project → Settings → Environment Variables.
 | `FB_CAPI_ACCESS_TOKEN` | **yes** | Conversions API token — never prefix with `NEXT_PUBLIC_` |
 | `FB_TEST_EVENT_CODE` | no | Routes events to Events Manager → Test Events |
 | `FB_GRAPH_VERSION` | no | Defaults to `v23.0`; bump when Meta deprecates it |
+| `NEXT_PUBLIC_CF_STREAM_CUSTOMER_CODE` | no | Cloudflare Stream customer code — see *Video* below |
 | `LEAD_WEBHOOK_URL` | **yes** | Where leads are POSTed as JSON (CRM/Zapier/Make/Sheet) |
 
 **With no variables set the site still runs.** Tracking no-ops and leads are
@@ -99,13 +100,29 @@ GDPR treats these as different purposes, so they are two different controls:
 
 ## Adding content
 
-**A residence** — edit `content/properties.ts`. Upload the 9:16 film to your
-video host, then set `video.src` (HLS or MP4) and `poster`. Until you do, each
-card renders a designed typographic placeholder, so the page looks finished
-while you shoot.
+**A residence** — edit `content/properties.ts`. Upload the 9:16 film to
+Cloudflare Stream, then set `video: { streamId: '<uid>' }`. That's the only
+change: the HLS manifest and the poster frame are both derived from the UID
+(`lib/stream.ts`). Until you set it, each card renders a designed typographic
+placeholder, so the page looks finished while the films are in production.
 
-> Don't commit `.mp4` files. There's no adaptive bitrate and Vercel will choke
-> on them. Use Cloudflare Stream, Mux or Bunny.
+> Don't commit `.mp4` files — no adaptive bitrate, and Vercel will choke.
+
+### Video
+
+Films are served from **Cloudflare Stream**. Set
+`NEXT_PUBLIC_CF_STREAM_CUSTOMER_CODE` once, then each property only needs its
+video UID.
+
+Playback uses a plain `<video>` rather than Cloudflare's iframe embed, so the
+player is ours to style and six reels don't mean six iframes. Safari plays HLS
+natively; everywhere else `hls.js` is **dynamically imported on first play**,
+so its ~130 KB never touches the initial bundle of a visitor who doesn't open
+a film.
+
+> These URLs assume **signed URLs are OFF** for the videos. If you enable
+> signing, the manifest needs a short-lived token minted server-side and
+> `lib/stream.ts` stops working on its own.
 
 **An advertorial** — add an entry to `content/advertorials.ts` with `en` and
 `es` copy. Block types: `p`, `h`, `quote`, `list`, `reel` (embeds a residence

@@ -2,11 +2,13 @@
 
 import { useState } from 'react'
 import { properties, formatPrice } from '@/content/properties'
+import { streamHls } from '@/lib/stream'
 import type { Block } from '@/content/advertorials'
 import type { Dictionary } from '@/app/[lang]/dictionaries'
 import type { Locale } from '@/lib/locales'
 import { trackBoth } from '@/lib/pixel'
-import PropertyMedia from './PropertyMedia'
+import PropertyMedia, { posterFor } from './PropertyMedia'
+import VideoPlayer from './VideoPlayer'
 
 /** Renders advertorial blocks, including inline residence films. */
 export default function AdvertorialBody({
@@ -110,11 +112,13 @@ function InlineReel({
 
   if (!property) return null
 
+  const hls = property.video ? streamHls(property.video.streamId) : null
+
   function start() {
     setPlaying(true)
     trackBoth('ViewContent', {
       content_ids: [property!.code],
-      content_name: property!.name[locale],
+      content_name: property!.name,
       content_type: 'product',
       content_category: 'residence-advertorial',
       value: property!.price.amount,
@@ -125,29 +129,22 @@ function InlineReel({
   return (
     <figure className="my-12 -mx-5 sm:mx-0">
       <div className="relative mx-auto aspect-[9/16] max-w-sm overflow-hidden rounded-sm bg-ink">
-        {playing && property.video ? (
-          <video
+        {playing && hls ? (
+          <VideoPlayer
+            src={hls}
+            poster={posterFor(property)}
             className="h-full w-full object-cover"
-            src={property.video.src}
-            poster={property.poster ?? undefined}
-            controls
-            autoPlay
-            playsInline
           />
         ) : (
           <button
             type="button"
             onClick={start}
             className="group absolute inset-0 h-full w-full"
-            aria-label={`${dict.collection.watch} — ${property.name[locale]}`}
+            aria-label={`${dict.collection.watch} — ${property.name}`}
           >
-            <PropertyMedia
-              property={property}
-              locale={locale}
-              soonLabel={dict.collection.soon}
-            />
+            <PropertyMedia property={property} soonLabel={null} />
             <span className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/70 to-transparent px-4 pb-4 pt-12">
-              <span className="label text-paper/90">{property.name[locale]}</span>
+              <span className="label text-paper/90">{property.name}</span>
               <span className="num label text-paper/70">
                 {formatPrice(property.price.amount, property.price.currency, locale)}
               </span>

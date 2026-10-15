@@ -1,11 +1,18 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import { formatPrice, type Property } from '@/content/properties'
+import {
+  formatArea,
+  formatBeds,
+  formatPrice,
+  type Property,
+} from '@/content/properties'
 import type { Dictionary } from '@/app/[lang]/dictionaries'
 import type { Locale } from '@/lib/locales'
 import { trackBoth } from '@/lib/pixel'
-import PropertyMedia from './PropertyMedia'
+import PropertyMedia, { posterFor } from './PropertyMedia'
+import VideoPlayer from './VideoPlayer'
+import { streamHls } from '@/lib/stream'
 import Reveal from './Reveal'
 
 type Props = {
@@ -25,14 +32,14 @@ export default function Collection({ dict, locale, properties }: Props) {
       // ViewContent per residence — this is what tells you which film sells.
       trackBoth('ViewContent', {
         content_ids: [property.code],
-        content_name: property.name[locale],
+        content_name: property.name,
         content_type: 'product',
         content_category: 'residence',
         value: property.price.amount,
         currency: property.price.currency,
       })
     },
-    [properties, locale],
+    [properties],
   )
 
   const close = useCallback(() => setOpenIndex(null), [])
@@ -159,25 +166,23 @@ function PropertyCard({
   priority: boolean
   onOpen: () => void
 }) {
+  const hasFilm = Boolean(property.video)
+  const action = hasFilm ? dict.collection.watch : dict.collection.soon
+
   return (
     <div className="group">
       <button
         type="button"
         onClick={onOpen}
-        aria-label={`${dict.collection.watch} — ${property.name[locale]}`}
+        aria-label={`${action} — ${property.name}`}
         className="relative block aspect-[9/16] w-full overflow-hidden rounded-sm bg-ink text-left"
       >
         <Badge status={property.status} dict={dict} />
 
-        <PropertyMedia
-          property={property}
-          locale={locale}
-          soonLabel={dict.collection.soon}
-          priority={priority}
-        />
+        <PropertyMedia property={property} soonLabel={null} priority={priority} />
 
         <span className="absolute inset-x-0 bottom-0 z-10 flex items-center justify-between bg-gradient-to-t from-black/70 to-transparent px-4 pb-4 pt-12">
-          <span className="label text-paper/90">{dict.collection.watch}</span>
+          <span className="label text-paper/90">{action}</span>
           <span className="flex h-9 w-9 items-center justify-center rounded-full border border-paper/35 text-paper transition-colors group-hover:border-paper group-hover:bg-paper group-hover:text-ink">
             <PlayIcon />
           </span>
@@ -189,7 +194,7 @@ function PropertyCard({
           <span className="num mr-2 font-mono text-[0.6875rem] text-muted">
             {property.code}
           </span>
-          {property.name[locale]}
+          {property.name}
         </h3>
         <span className="num shrink-0 text-[0.9375rem]">
           {formatPrice(property.price.amount, property.price.currency, locale)}
@@ -201,8 +206,8 @@ function PropertyCard({
       </p>
 
       <p className="label num mt-3 text-muted/80">
-        {property.location[locale]} · {property.beds} {dict.collection.spec.beds} ·{' '}
-        {property.area} m²
+        {property.neighbourhood[locale]} · {formatBeds(property.beds)}{' '}
+        {dict.collection.spec.beds} · {formatArea(property.area)}
       </p>
     </div>
   )
@@ -223,12 +228,14 @@ function Player({
   onPrev: () => void
   onNext: () => void
 }) {
+  const hls = property.video ? streamHls(property.video.streamId) : null
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-ink/95 p-4 backdrop-blur-sm sm:p-8"
       role="dialog"
       aria-modal="true"
-      aria-label={property.name[locale]}
+      aria-label={property.name}
     >
       <button
         type="button"
@@ -243,21 +250,16 @@ function Player({
             aspect ratio has nothing to resolve against and the panel
             collapses to zero width inside the flex row. */}
         <div className="relative mx-auto h-[52svh] w-auto max-w-full shrink-0 overflow-hidden rounded-sm bg-ink-soft [aspect-ratio:9/16] md:mx-0 md:h-[72svh]">
-          {property.video ? (
-            <video
+          {hls ? (
+            <VideoPlayer
               key={property.code}
+              src={hls}
+              poster={posterFor(property)}
               className="h-full w-full object-cover"
-              src={property.video.src}
-              poster={property.poster ?? undefined}
-              controls
-              autoPlay
-              playsInline
-              preload="metadata"
             />
           ) : (
             <PropertyMedia
               property={property}
-              locale={locale}
               soonLabel={dict.collection.soon}
               priority
             />
@@ -267,7 +269,7 @@ function Player({
         <div className="min-w-0 flex-1 text-paper">
           <p className="label num text-paper/45">{property.code}</p>
           <h3 className="display mt-3 text-4xl sm:text-5xl">
-            {property.name[locale]}
+            {property.name}
           </h3>
           <p className="mt-4 text-sm leading-relaxed text-paper/70">
             {property.hook[locale]}
@@ -276,9 +278,11 @@ function Player({
           <dl className="mt-7 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-line-dark pt-6">
             {[
               [dict.collection.spec.price, formatPrice(property.price.amount, property.price.currency, locale)],
-              [dict.collection.spec.location, property.location[locale]],
-              [dict.collection.spec.area, `${property.area} m²`],
-              [dict.collection.spec.beds, String(property.beds)],
+              [dict.collection.spec.location, property.neighbourhood[locale]],
+              [dict.collection.spec.floor, property.floor[locale]],
+              [dict.collection.spec.area, formatArea(property.area)],
+              [dict.collection.spec.beds, formatBeds(property.beds)],
+              [dict.collection.spec.baths, String(property.baths)],
             ].map(([term, value]) => (
               <div key={term}>
                 <dt className="label text-paper/40">{term}</dt>

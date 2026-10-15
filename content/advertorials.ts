@@ -40,7 +40,7 @@ export const advertorials: Advertorial[] = [
     en: {
       title: 'What “27 days to offer” actually means',
       standfirst:
-        'Every agent on the coast quotes a time-to-sell figure. Almost none of them will tell you how it was calculated. Here is mine, with the awkward parts left in.',
+        'Every agency in Barcelona quotes a time-to-sell figure. Almost none of them will tell you how it was calculated. Here is mine, with the awkward parts left in.',
       blocks: [
         {
           type: 'p',
@@ -64,9 +64,9 @@ export const advertorials: Advertorial[] = [
         },
         {
           type: 'reel',
-          code: '00.05',
+          code: '00.04',
           caption:
-            'Villa Serrana went in nine days at asking. It is the outlier, which is exactly why the median matters more.',
+            'Rector Triadó: ninety-two metres inside, sixty outside. A floorplan photographs badly and films well, which is most of the argument.',
         },
         {
           type: 'h',
@@ -79,7 +79,7 @@ export const advertorials: Advertorial[] = [
         {
           type: 'quote',
           text: 'Four viewings, all genuine buyers. No tyre-kickers, which after our last agent felt like a luxury.',
-          attribution: 'R. Okonkwo, Sotogrande',
+          attribution: 'R. Okonkwo, Sant Gervasi',
         },
         {
           type: 'p',
@@ -94,7 +94,7 @@ export const advertorials: Advertorial[] = [
     es: {
       title: 'Qué significa de verdad «27 días hasta la oferta»',
       standfirst:
-        'Todas las agencias de la costa publican un plazo de venta. Casi ninguna explica cómo lo ha calculado. Aquí está el mío, con las partes incómodas incluidas.',
+        'Todas las agencias de Barcelona publican un plazo de venta. Casi ninguna explica cómo lo ha calculado. Aquí está el mío, con las partes incómodas incluidas.',
       blocks: [
         {
           type: 'p',
@@ -118,9 +118,9 @@ export const advertorials: Advertorial[] = [
         },
         {
           type: 'reel',
-          code: '00.05',
+          code: '00.04',
           caption:
-            'Villa Serrana se vendió en nueve días al precio pedido. Es la excepción, y precisamente por eso la mediana importa más.',
+            'Rector Triadó: noventa y dos metros dentro, sesenta fuera. Una distribución así se fotografía mal y se filma bien, y ahí está casi todo el argumento.',
         },
         {
           type: 'h',
@@ -133,7 +133,7 @@ export const advertorials: Advertorial[] = [
         {
           type: 'quote',
           text: 'Cuatro visitas, todas de compradores reales. Ningún curioso, que después de nuestra agencia anterior fue un lujo.',
-          attribution: 'R. Okonkwo, Sotogrande',
+          attribution: 'R. Okonkwo, Sant Gervasi',
         },
         {
           type: 'p',

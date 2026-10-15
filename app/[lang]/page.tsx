@@ -37,7 +37,7 @@ export default async function LanderPage({
         <Positioning dict={dict} />
         <Collection dict={dict} locale={lang} properties={properties} />
         <Credentials dict={dict} />
-        <Agent dict={dict} />
+        <Agent dict={dict} portrait="/jana.jpg" />
         <Process dict={dict} />
         <Proof dict={dict} />
         <RiskReversal dict={dict} />

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Inter, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { locales, isLocale } from '@/lib/locales'
 import { getDictionary } from './dictionaries'
@@ -10,6 +10,15 @@ import '../globals.css'
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
+})
+
+// Display face, chosen to sit alongside the existing brand collateral,
+// where property names are set in a high-contrast serif.
+const display = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-display-face',
   display: 'swap',
 })
 
@@ -67,7 +76,7 @@ export default async function LangLayout({
   const dict = await getDictionary(lang)
 
   return (
-    <html lang={lang} className={`${inter.variable} ${mono.variable}`}>
+    <html lang={lang} className={`${inter.variable} ${display.variable} ${mono.variable}`}>
       <body>
         {/*
           Marks the document as script-capable before the rest of <body> is

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Jana - Colección Privada",
-    "description": "Seis viviendas en Barcelona, mostradas en vídeo. Visitas privadas con cita previa."
+    "title": "Jana - Residencias en Barcelona",
+    "description": "Una cartera seleccionada de viviendas en Barcelona, cada una filmada de principio a fin. Míralas antes de reservar una visita."
   },
   "nav": {
     "collection": "Colección",
@@ -11,14 +11,14 @@
     "cta": "Reservar visita"
   },
   "ticker": [
-    "14,2 M€ intermediados en 2026",
-    "38 residencias vendidas",
-    "4,9 ★ sobre 127 reseñas",
-    "Visitas privadas en 48 h"
+    "300+ propiedades en exclusiva",
+    "Visitas privadas en 48 h",
+    "4 visitas hasta la casa correcta",
+    "La mayoría nunca llega a un portal"
   ],
   "hero": {
     "eyebrow": "Colección Privada 00.00",
-    "title": "Seis residencias.\nMostradas en vídeo.",
+    "title": "Residencias en Barcelona.\nMostradas en vídeo.",
     "tagline": "Representación inmobiliaria de nueva generación en Barcelona - filmada, no fotografiada.",
     "cta": "Reservar visita privada",
     "secondary": "Ver la colección",
@@ -26,7 +26,7 @@
   },
   "positioning": {
     "heading": "Expresiones de lugar.",
-    "body": "Una selección de seis - no un portal de anuncios. Cada vivienda se filma completa, con precio transparente, y se muestra solo con cita previa."
+    "body": "Una cartera seleccionada - no un portal de anuncios. Cada vivienda se filma completa, con precio transparente, y se muestra solo con cita previa."
   },
   "collection": {
     "label": "La Colección",
@@ -59,18 +59,18 @@
     "items": [
       {
         "n": "01",
-        "title": "27 días hasta oferta",
-        "body": "Tiempo medio desde la publicación del vídeo hasta la oferta aceptada en los últimos 18 meses."
+        "title": "4 visitas hasta la casa correcta",
+        "body": "La mayoría de compradores ve decenas. Mira los vídeos primero y solo pisas las que merecen la pena."
       },
       {
         "n": "02",
-        "title": "98,4 % del precio pedido",
-        "body": "Precio medio obtenido frente al precio orientativo - negociado, nunca rebajado por defecto."
+        "title": "Visitas en 48 horas",
+        "body": "Dime cuándo te viene bien y la organizo, fines de semana incluidos. ¿Vienes en avión? Las agrupo en un solo día."
       },
       {
         "n": "03",
-        "title": "11.000 compradores cualificados",
-        "body": "Una lista privada construida durante nueve años, a la que llego antes de publicar nada."
+        "title": "300+ propiedades en exclusiva",
+        "body": "La mayoría nunca llega a un portal. Lo que está filmado aquí es una fracción de lo que tengo."
       }
     ]
   },
@@ -78,8 +78,8 @@
     "label": "Sobre mí",
     "heading": "Otra forma de mostrar una casa.",
     "body": [
-      "Soy Jana. Durante nueve años he representado viviendas en Barcelona para propietarios que prefieren vender bien y con discreción antes que rápido y a gritos.",
-      "Cada propiedad que acepto se filma como debe filmarse: recorrida entera, con luz natural, de principio a fin. El comprador decide con el vídeo. Cuando nos vemos en la puerta, la conversación ya va en serio."
+      "Soy Jana. Durante nueve años he vendido viviendas en Barcelona, y filmo todas y cada una antes de que lleguen a un portal.",
+      "Las fotos se eligen. Un vídeo es la vivienda entera - cada estancia, con luz natural, de principio a fin. Decides con el vídeo, así nadie pierde un sábado por educación. Cuando nos vemos en la puerta, la conversación ya va en serio."
     ],
     "cta": "Trabajemos juntos"
   },
@@ -90,17 +90,17 @@
       {
         "n": "01",
         "title": "Envía tus datos",
-        "body": "Con el email y el teléfono es suficiente. Sin formularios sobre tu presupuesto ni cuestionarios."
+        "body": "Con el email y el teléfono es suficiente. Sin cuestionarios sobre tu presupuesto."
       },
       {
         "n": "02",
         "title": "Te llamo en 24 h",
-        "body": "Una llamada breve para entender qué buscas - o qué vendes. En español o en inglés."
+        "body": "Una llamada breve para entender qué buscas. En español o en inglés."
       },
       {
         "n": "03",
         "title": "Visitamos en privado",
-        "body": "Visitas organizadas a tu medida, normalmente en 48 horas. Sin jornadas de puertas abiertas ni grupos."
+        "body": "A tu medida, normalmente en 48 horas. Sin jornadas de puertas abiertas ni grupos."
       }
     ]
   },
@@ -144,12 +144,12 @@
     "heading": "Antes de enviar nada.",
     "items": [
       {
-        "title": "Sin compromiso",
-        "body": "Una consulta es una conversación, no un mandato. No se firma nada hasta que tú quieras firmarlo."
+        "title": "No te cuesta nada",
+        "body": "La comisión la paga el vendedor. Como comprador nunca recibirás una factura mía."
       },
       {
-        "title": "Valoración gratuita",
-        "body": "Si vendes, la tasación de mercado es gratuita y tuya, con independencia de con quién acabes vendiendo."
+        "title": "Sin compromiso",
+        "body": "Una consulta es una conversación. No se firma nada y no te voy a perseguir."
       },
       {
         "title": "Tus datos se quedan aquí",
@@ -159,8 +159,8 @@
   },
   "form": {
     "label": "Consultar",
-    "heading": "Reserva una visita privada.",
-    "sub": "Solo email y teléfono. Te respondo en menos de 24 horas.",
+    "heading": "¿Cuál te gustaría ver?",
+    "sub": "Solo necesito tu email y tu teléfono. Te respondo en menos de 24 horas.",
     "name": "Nombre completo",
     "namePlaceholder": "María García",
     "email": "Email",
@@ -169,9 +169,9 @@
     "phonePlaceholder": "+34 600 000 000",
     "interest": "Me interesa",
     "interestOptions": {
-      "buying": "Comprar una residencia",
-      "selling": "Vender mi propiedad",
-      "both": "Ambas / aún no lo sé"
+      "viewing": "Ver una de estas",
+      "other": "Otra cosa en Barcelona",
+      "unsure": "Aún no lo sé"
     },
     "property": "Residencia",
     "propertyAny": "Sin preferencia",
@@ -196,32 +196,36 @@
     "items": [
       {
         "q": "¿Cuánto me cuesta como comprador?",
-        "a": "Nada. La comisión la paga el vendedor. Tú pagas el precio de compra, los impuestos y tus honorarios legales - te doy el desglose por escrito antes de que te comprometas a nada."
+        "a": "Nada a mí. La comisión la paga el vendedor. Tú pagas el precio de compra, los impuestos y tus honorarios legales, y te doy el desglose por escrito antes de que te comprometas a nada."
       },
       {
-        "q": "Vendo. ¿Cuáles son tus honorarios?",
-        "a": "Un único porcentaje sobre el precio de venta obtenido, acordado por escrito antes de empezar y pagadero solo al firmar. Sin pagos por adelantado, sin gastos de marketing, sin facturas de fotografía."
+        "q": "¿Qué gastos hay además del precio?",
+        "a": "El impuesto de transmisiones, la notaría, el registro, la gestoría y tu propio abogado se suman al precio. La cifra exacta depende de la propiedad, así que te doy un desglose por escrito de la vivienda concreta en lugar de una regla general."
       },
       {
         "q": "¿Puedo comprar en España siendo no residente?",
         "a": "Sí. Necesitarás un NIE y una cuenta bancaria española, y ambos se consiguen en días, no en semanas. Trabajo con un gestor y un abogado independiente que lo gestionan a diario."
       },
       {
-        "q": "¿Gestionas hipotecas?",
-        "a": "No las intermedio, pero te presento a dos brókeres independientes que financian a no residentes, normalmente al 60–70 % del valor. Puedes usar el tuyo si lo prefieres."
+        "q": "¿Puedo conseguir una hipoteca?",
+        "a": "No las intermedio, pero te presento a brókeres independientes que financian a no residentes. Puedes usar el tuyo si lo prefieres."
       },
       {
-        "q": "¿En cuánto tiempo puedo ver una propiedad?",
+        "q": "¿En cuánto tiempo puedo ver una vivienda?",
         "a": "Normalmente en 48 horas, fines de semana incluidos. Si vienes en avión, dime tus fechas y agrupo las visitas en un solo día."
       },
       {
         "q": "¿Son estas todas tus propiedades?",
-        "a": "Estas seis son las que están filmadas y publicadas ahora mismo. Siempre hay producto fuera de mercado que nunca llega a una web - pregúntame en la llamada."
+        "a": "No. Lo que está filmado y publicado aquí es una fracción: tengo más de 300 propiedades en exclusiva y la mayoría nunca llega a un portal. Dime qué buscas en la llamada."
+      },
+      {
+        "q": "¿La vivienda es realmente como en el vídeo?",
+        "a": "De eso se trata. Una sola toma, sin puesta en escena, con luz natural. Lo que no funcione también sale en el vídeo."
       }
     ]
   },
   "footer": {
-    "tagline": "Representación inmobiliaria privada, Barcelona.",
+    "tagline": "Representación inmobiliaria privada para compradores, Barcelona.",
     "contactLabel": "Contacto",
     "legalLabel": "Legal",
     "privacy": "Política de privacidad",

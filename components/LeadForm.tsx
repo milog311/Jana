@@ -63,7 +63,7 @@ export default function LeadForm({
           phone,
           consent,
           locale,
-          interest: String(data.get('interest') ?? 'both'),
+          interest: String(data.get('interest') ?? 'unsure'),
           property: String(data.get('property') ?? 'any'),
           website: String(data.get('website') ?? ''),
           fbp: readCookie('_fbp'),
@@ -88,7 +88,7 @@ export default function LeadForm({
       if (result.eventId) {
         trackPixel('Lead', result.eventId, {
           content_name: String(data.get('property') ?? 'any'),
-          lead_type: String(data.get('interest') ?? 'both'),
+          lead_type: String(data.get('interest') ?? 'unsure'),
         })
       }
 
@@ -158,9 +158,9 @@ export default function LeadForm({
                   />
 
                   <Select name="interest" label={dict.form.interest}>
-                    <option value="buying">{dict.form.interestOptions.buying}</option>
-                    <option value="selling">{dict.form.interestOptions.selling}</option>
-                    <option value="both">{dict.form.interestOptions.both}</option>
+                    <option value="viewing">{dict.form.interestOptions.viewing}</option>
+                    <option value="other">{dict.form.interestOptions.other}</option>
+                    <option value="unsure">{dict.form.interestOptions.unsure}</option>
                   </Select>
 
                   <Select name="property" label={dict.form.property}>

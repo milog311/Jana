@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Jana - Private Collection",
-    "description": "Six homes in Barcelona, shown on film. Private viewings by appointment."
+    "title": "Jana - Barcelona Residences",
+    "description": "A curated portfolio of Barcelona homes, each filmed end to end. Watch before you book a viewing."
   },
   "nav": {
     "collection": "Collection",
@@ -11,14 +11,14 @@
     "cta": "Book a viewing"
   },
   "ticker": [
-    "€14.2M placed in 2026",
-    "38 residences sold",
-    "4.9 ★ across 127 reviews",
-    "Private viewings within 48h"
+    "300+ exclusive properties",
+    "Private viewings within 48 h",
+    "4 viewings to the right home",
+    "Most never reach a portal"
   ],
   "hero": {
     "eyebrow": "Private Collection 00.00",
-    "title": "Six residences.\nShown on film.",
+    "title": "Barcelona Residences.\nShown on film.",
     "tagline": "Next-generation property representation in Barcelona - filmed, not photographed.",
     "cta": "Book a private viewing",
     "secondary": "See the collection",
@@ -26,7 +26,7 @@
   },
   "positioning": {
     "heading": "Expressions of place.",
-    "body": "A curated six - not a listings feed. Each home is filmed in full, priced openly, and shown by appointment only."
+    "body": "A curated portfolio - not a listings feed. Each home is filmed in full, priced openly, and shown by appointment only."
   },
   "collection": {
     "label": "The Collection",
@@ -59,18 +59,18 @@
     "items": [
       {
         "n": "01",
-        "title": "27 days to offer",
-        "body": "Median time from first film published to accepted offer across the last 18 months."
+        "title": "4 viewings to the right home",
+        "body": "Most buyers see dozens. Watch the films first and you only stand in the ones worth standing in."
       },
       {
         "n": "02",
-        "title": "98.4% of asking",
-        "body": "Average achieved price against guide price - negotiated, never discounted by default."
+        "title": "Viewings within 48 hours",
+        "body": "Tell me when you're free and I'll arrange it, weekends included. Flying in? I'll group them into one day."
       },
       {
         "n": "03",
-        "title": "11,000 qualified buyers",
-        "body": "A private distribution list built over nine years, reached before anything goes public."
+        "title": "300+ exclusive properties",
+        "body": "Most never reach a portal. What is filmed here is a fraction of what I hold."
       }
     ]
   },
@@ -78,8 +78,8 @@
     "label": "About",
     "heading": "Redefining how homes are shown.",
     "body": [
-      "I'm Jana. For nine years I've represented homes in Barcelona for owners who would rather sell quietly and well than loudly and fast.",
-      "Every property I take on is filmed properly - walked through, in natural light, start to finish. Buyers decide from the film. By the time we meet at the door, the conversation is already serious."
+      "I'm Jana. For nine years I've sold homes in Barcelona, and I film every one of them before it goes near a portal.",
+      "Photographs are chosen. A film is the whole flat - every room, in natural light, start to finish. You decide from the film, so nobody wastes a Saturday being polite. By the time we meet at the door, the conversation is already serious."
     ],
     "cta": "Work with me"
   },
@@ -90,17 +90,17 @@
       {
         "n": "01",
         "title": "Send your details",
-        "body": "Email and phone is enough. No forms about your budget, no qualification quiz."
+        "body": "Email and phone is enough. No budget questionnaire."
       },
       {
         "n": "02",
-        "title": "I call within 24h",
-        "body": "A short call to understand what you're looking for - or what you're selling. In English or Spanish."
+        "title": "I call within 24 hours",
+        "body": "A short call to understand what you're after. English or Spanish."
       },
       {
         "n": "03",
-        "title": "We view privately",
-        "body": "Viewings arranged around you, typically within 48 hours. No open houses, no crowds."
+        "title": "We view, privately",
+        "body": "Around your schedule, usually within 48 hours. No open houses, no crowds."
       }
     ]
   },
@@ -144,23 +144,23 @@
     "heading": "Before you send anything.",
     "items": [
       {
-        "title": "No obligation",
-        "body": "An enquiry is a conversation, not a mandate. Nothing is signed until you want it signed."
+        "title": "It costs you nothing",
+        "body": "The seller pays my commission. As a buyer you never get an invoice from me."
       },
       {
-        "title": "Valuation at no cost",
-        "body": "If you're selling, the market appraisal is free and yours to keep, whoever you list with."
+        "title": "No obligation",
+        "body": "An enquiry is a conversation. Nothing is signed, and I won't chase you."
       },
       {
         "title": "Your details stay here",
-        "body": "Never sold, never passed to third-party agencies, never added to a bulk mailing list."
+        "body": "Never sold, never passed to other agencies, never added to a bulk mailing list."
       }
     ]
   },
   "form": {
     "label": "Enquire",
-    "heading": "Book a private viewing.",
-    "sub": "Email and phone only. I'll come back to you within 24 hours.",
+    "heading": "Which one would you like to see?",
+    "sub": "Email and phone is all I need. I'll come back to you within 24 hours.",
     "name": "Full name",
     "namePlaceholder": "Jane Doe",
     "email": "Email",
@@ -169,9 +169,9 @@
     "phonePlaceholder": "+34 600 000 000",
     "interest": "I'm interested in",
     "interestOptions": {
-      "buying": "Buying a residence",
-      "selling": "Selling my property",
-      "both": "Both / not sure yet"
+      "viewing": "Viewing one of these",
+      "other": "Something else in Barcelona",
+      "unsure": "Not sure yet"
     },
     "property": "Residence",
     "propertyAny": "No preference",
@@ -196,32 +196,36 @@
     "items": [
       {
         "q": "What does it cost me as a buyer?",
-        "a": "Nothing. The seller pays the commission. You pay the purchase price, taxes and your own legal fees - I'll give you a written breakdown before you commit to anything."
+        "a": "Nothing to me. The seller pays the commission. You pay the purchase price, the taxes and your own legal fees, and I'll give you a written breakdown before you commit to anything."
       },
       {
-        "q": "I'm selling. What's your fee?",
-        "a": "A single percentage of the achieved sale price, agreed in writing before we start, payable only on completion. No upfront fees, no marketing charges, no photography invoices."
+        "q": "What are the extra costs on top of the price?",
+        "a": "Transfer tax, notary, land registry, gestoría and your own lawyer all sit on top of the asking price. The exact figure depends on the property, so I give you a written breakdown for the specific home rather than a rule of thumb."
       },
       {
         "q": "Can I buy in Spain as a non-resident?",
-        "a": "Yes. You'll need an NIE number and a Spanish bank account, both of which take days rather than weeks. I work with a gestor and an independent lawyer who handle this routinely."
+        "a": "Yes. You will need an NIE and a Spanish bank account, both of which take days rather than weeks. I work with a gestor and an independent lawyer who handle this routinely."
       },
       {
-        "q": "Do you arrange mortgages?",
-        "a": "I don't broker them, but I'll introduce you to two independent brokers who lend to non-residents, typically at 60–70% loan-to-value. You're free to use your own."
+        "q": "Can I get a mortgage?",
+        "a": "I don't broker them, but I'll introduce you to independent brokers who lend to non-residents. You're free to use your own."
       },
       {
-        "q": "How quickly can I see a property?",
-        "a": "Usually within 48 hours, including weekends. If you’re flying in, tell me your dates and I’ll group viewings into a single day."
+        "q": "How quickly can I see a home?",
+        "a": "Usually within 48 hours, weekends included. If you're flying in, tell me your dates and I'll group viewings into a single day."
       },
       {
         "q": "Are these all the properties you have?",
-        "a": "These six are the ones currently filmed and publicly shown. There is always off-market stock that never reaches a website - ask me on the call."
+        "a": "No. What is filmed and published here is a fraction of it: there are over 300 exclusive properties on my books and most never reach a portal. Tell me what you are after on the call."
+      },
+      {
+        "q": "Is the home really like the film?",
+        "a": "That is the point. One take, no staging, natural light. Anything wrong with it is in the film too."
       }
     ]
   },
   "footer": {
-    "tagline": "Private property representation, Barcelona.",
+    "tagline": "Private buyer property representation, Barcelona.",
     "contactLabel": "Contact",
     "legalLabel": "Legal",
     "privacy": "Privacy policy",

@@ -119,17 +119,17 @@ provenca-balmes-1    provenca-balmes-2    placa-de-les-olles
 rector-triado        torrijos             bruc
 ```
 
-Encode vertical, and **always with `-movflags +faststart`** — without it the
-MP4 index sits at the end of the file and the browser downloads the whole
-thing before the first frame appears:
+Camera exports are not web files. The originals here were **HEVC, 2160x3840,
+~37 Mbps, 120–280 MB each** — unplayable in Chrome-on-Windows and Firefox
+(which don't decode HEVC), ~9x more pixels than the player ever shows, and far
+too heavy for a host with no adaptive bitrate. Run every reel through:
 
 ```bash
-ffmpeg -i input.mov -vf "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920" \
-  -c:v libx264 -crf 23 -preset slow -pix_fmt yuv420p \
-  -c:a aac -b:a 128k -movflags +faststart output.mp4
-
-ffmpeg -i output.mp4 -ss 1 -frames:v 1 -q:v 4 output.jpg
+./scripts/encode-reel.sh ~/Desktop/Edits_16_Torrijos.MP4 torrijos
 ```
+
+That writes `web/torrijos.mp4` and `web/torrijos.jpg` — H.264 1080x1920 capped
+at 4 Mbps with `faststart`, roughly a 10x reduction. Upload both to the bucket.
 
 Once the files are up, check them before wondering why a card is still on its
 placeholder — a kept accent, a capital `.MP4` or a nested folder all fail

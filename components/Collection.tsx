@@ -180,7 +180,14 @@ function PropertyCard({
       >
         <Badge status={property.status} dict={dict} />
 
-        <PropertyMedia property={property} soonLabel={null} priority={priority} />
+        {/* Grid cards stay typographic by design — the film's own imagery
+            is held back until the viewer opens one. */}
+        <PropertyMedia
+          property={property}
+          soonLabel={null}
+          priority={priority}
+          showPoster={false}
+        />
 
         <span className="absolute inset-x-0 bottom-0 z-10 flex items-center justify-between bg-gradient-to-t from-black/70 to-transparent px-4 pb-4 pt-12">
           <span className="label text-paper/90">{action}</span>

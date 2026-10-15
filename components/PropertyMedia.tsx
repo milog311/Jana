@@ -15,13 +15,20 @@ export default function PropertyMedia({
   property,
   soonLabel,
   priority = false,
+  showPoster = true,
 }: {
   property: Property
   /** Pass null where the surrounding UI already states the film's status. */
   soonLabel?: string | null
   priority?: boolean
+  /**
+   * False keeps the typographic placeholder even when a poster exists.
+   * The grid uses this deliberately: the cards are the design, and the
+   * film's own imagery is held back until the viewer opens one.
+   */
+  showPoster?: boolean
 }) {
-  const poster = posterFor(property)
+  const poster = showPoster ? posterFor(property) : undefined
 
   if (poster) {
     return (
